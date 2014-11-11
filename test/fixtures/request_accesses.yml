@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: request_accesses
+#
+#  id          :integer          not null, primary key
+#  subject     :string(255)
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subject: MyString
+  description: MyText
+
+two:
+  subject: MyString
+  description: MyText
