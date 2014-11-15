@@ -11,5 +11,7 @@
 class EmailGroup < ActiveRecord::Base
   attr_accessible :name
   has_many :email_addresses
+  
+  validates_uniqueness_of :name
   validates :name, presence: {message: ' cannot be empty'}
 end

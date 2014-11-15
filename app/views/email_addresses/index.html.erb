@@ -17,7 +17,7 @@
       <tr>
         <td><%= link_to email_address.id, email_address_path(email_address) %></td>
         <td><%= email_address.name %></td>
-        <td><%= email_address.email_group_id %></td>
+        <td><%= email_address.email_group.name %></td>
         <td><%=l email_address.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

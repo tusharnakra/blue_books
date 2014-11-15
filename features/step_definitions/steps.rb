@@ -55,12 +55,12 @@ end
 
 When(/^I add a new email address$/) do
   fill_in 'Name', :with => "abc@domain.xyz"
-  fill_in 'Email group', :with => "1"
+  #select('Email group 1', :from => "Email group")
   click_button 'Create Email address'
 end
 
 Then(/^I should see the confirmation of email address's creation$/) do
-  assert page.has_content?("Email address was successfully created.")
+  assert page.has_content?("Email group was successfully created.")
 end
 
 When(/^I add a new email group with no name$/) do

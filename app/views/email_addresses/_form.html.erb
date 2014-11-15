@@ -20,7 +20,7 @@
   <div class="control-group">
     <%= f.label :email_group_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :email_group_id, :class => 'number_field' %>
+	  <%= collection_select :email_address, :email_group_id, EmailGroup.all, :id, :name%>
     </div>
   </div>
 
@@ -30,3 +30,4 @@
                 email_addresses_path, :class => 'btn' %>
   </div>
 <% end %>
+

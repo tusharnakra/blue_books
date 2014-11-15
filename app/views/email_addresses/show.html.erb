@@ -3,12 +3,14 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<dl>
+	<p id="notice"><%= notice %></p>
+</dl>
 <dl class="dl-horizontal">
-  <dt><p id="notice"><%= notice %></p></dt>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @email_address.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:email_group_id) %>:</strong></dt>
-  <dd><%= @email_address.email_group_id %></dd>
+  <dd><%= @email_address.email_group.name %></dd>
 </dl>
 
 <div class="form-actions">
