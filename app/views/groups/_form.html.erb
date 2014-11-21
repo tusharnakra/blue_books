@@ -1,16 +1,16 @@
-<% if @email_group.errors.any? %>
+<% if @group.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@email_group.errors.count, "error") %> prohibited this email_group from being saved:</h2>
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this email_group from being saved:</h2>
 
       <ul>
-      <% @email_group.errors.full_messages.each do |msg| %>
+      <% @group.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  
-<%= form_for @email_group, :html => { :class => 'form-horizontal' } do |f| %>
+
+<%= form_for @group, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -21,6 +21,6 @@
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                email_groups_path, :class => 'btn' %>
+                groups_path, :class => 'btn' %>
   </div>
 <% end %>

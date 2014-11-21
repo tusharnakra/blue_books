@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: email_groups
+# Table name: groups
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 
-class EmailGroup < ActiveRecord::Base
+class Group < ActiveRecord::Base
   attr_accessible :name
   has_many :email_addresses
   

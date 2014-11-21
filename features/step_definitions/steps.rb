@@ -33,7 +33,7 @@ end
 
 
 
-###################################Feature : Manage Email Groups ######################################
+###################################Feature : Manage Groups ######################################
 
 
 Given(/^I'm on the email group creation page$/) do
@@ -57,7 +57,8 @@ end
 When(/^I add a new email address$/) do
   
   fill_in 'Name', :with => "abc@domain.xyz"
-  page.select('Email Group 1', :from => "Group")
+
+  select('Email group 1', :from => "Group")
   click_button 'Create Email address'
 end
 

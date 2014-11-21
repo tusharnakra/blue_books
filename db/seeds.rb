@@ -11,17 +11,17 @@ RequestAccess.create(subject: "Complete read access", description: "Requesting r
 RequestAccess.create(subject: "Blue Book 7", description: "Requesting edit Access to blue book #7")
 
 
-email_group_1 = EmailGroup.create(name: "Email Group 1")
-email_group_2 = EmailGroup.create(name: "Email Group 2")
-email_group_3 = EmailGroup.create(name: "Email Group 3")
+email_group_1 = Group.create(name: "Email Group 1")
+email_group_2 = Group.create(name: "Email Group 2")
+email_group_3 = Group.create(name: "Email Group 3")
 
 
-EmailAddress.create(name: "ntushar@seas.upenn.edu", email_group_id: email_group_1.id)
-EmailAddress.create(name: "adid@seas.upenn.edu", email_group_id: email_group_1.id)
-EmailAddress.create(name: "shallav@seas.upenn.edu", email_group_id: email_group_2.id)
-EmailAddress.create(name: "shallav.varma@gmail.com", email_group_id: email_group_2.id)
-EmailAddress.create(name: "adid.desh@gmail.com", email_group_id: email_group_3.id)
-EmailAddress.create(name: "tusharnakra@hotmail.com", email_group_id: email_group_3.id)
+EmailAddress.create(name: "ntushar@seas.upenn.edu", group_id: email_group_1.id)
+EmailAddress.create(name: "adid@seas.upenn.edu", group_id: email_group_1.id)
+EmailAddress.create(name: "shallav@seas.upenn.edu", group_id: email_group_2.id)
+EmailAddress.create(name: "shallav.varma@gmail.com", group_id: email_group_2.id)
+EmailAddress.create(name: "adid.desh@gmail.com", group_id: email_group_3.id)
+EmailAddress.create(name: "tusharnakra@hotmail.com", group_id: email_group_3.id)
 
 
 school_1 = School.create(name: "SEAS")

@@ -1,4 +1,7 @@
 BlueBooks::Application.routes.draw do
+  resources :groups
+
+
   resources :schools
 
 
@@ -6,9 +9,6 @@ BlueBooks::Application.routes.draw do
   get 'search' => "members#search"
 
   resources :email_addresses
-
-
-  resources :email_groups
 
 
   resources :request_accesses
