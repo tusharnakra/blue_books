@@ -24,11 +24,6 @@ Feature: Manage Email Groups
 		When I add a new email address with no name
 		Then I should see errors on the page
 		
-	Scenario: Add an email address without email group
-		Given I'm on the email address addition page
-		When I add a new email address with no email group
-		Then I should see errors on the page
-		
 	Scenario: Add an email address which does not satisfy "local-part@domain" syntax
 		Given I'm on the email address addition page
 		When I add a new email address in incorrect format
