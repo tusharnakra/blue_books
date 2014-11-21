@@ -1,0 +1,1383 @@
+Script started on Wed 19 Nov 2014 03:38:30 PM PST
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails generate scaffold member pennkey :string [K[K[K[K[K[K[K[K[K:string first_ name:string last_name:string email_address:string school:[K[K[K[K[K[K[K[K
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20141119234106_create_members.rb
+[1m[32m      create[0m    app/models/member.rb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/unit/member_test.rb
+[1m[32m      create[0m      test/fixtures/members.yml
+[1m[37m      invoke[0m  resource_route
+[1m[32m       route[0m    resources :members
+[1m[37m      invoke[0m  scaffold_controller
+[1m[32m      create[0m    app/controllers/members_controller.rb
+[1m[37m      invoke[0m    erb
+[1m[32m      create[0m      app/views/members
+[1m[32m      create[0m      app/views/members/index.html.erb
+[1m[32m      create[0m      app/views/members/edit.html.erb
+[1m[32m      create[0m      app/views/members/show.html.erb
+[1m[32m      create[0m      app/views/members/new.html.erb
+[1m[32m      create[0m      app/views/members/_form.html.erb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/functional/members_controller_test.rb
+[1m[37m      invoke[0m    helper
+[1m[32m      create[0m      app/helpers/members_helper.rb
+[1m[37m      invoke[0m      test_unit
+[1m[32m      create[0m        test/unit/helpers/members_helper_test.rb
+[1m[37m      invoke[0m  assets
+[1m[37m      invoke[0m    coffee
+[1m[32m      create[0m      app/assets/javascripts/members.js.coffee
+[1m[37m      invoke[0m    scss
+[1m[32m      create[0m      app/assets/stylesheets/members.css.scss
+[1m[37m      invoke[0m  scss
+[1m[31m    conflict[0m    app/assets/stylesheets/scaffolds.css.scss
+  Overwrite /home/aditya/blue_books/app/assets/stylesheets/scaffolds.css.scss? (eenter "h" for help) [Ynaqdh] Y
+[1m[33m       force[0m    app/assets/stylesheets/scaffolds.css.scss
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails generate scaffold member pennkey:string first_nname:string last_name:string email_address:string[Awireshark[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crails generate scaffold member pennkey:string first_nname:string last_name:string email_address:string[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ke sch[K[K[Kscaffold school name:string
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20141119234413_create_schools.rb
+[1m[32m      create[0m    app/models/school.rb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/unit/school_test.rb
+[1m[32m      create[0m      test/fixtures/schools.yml
+[1m[37m      invoke[0m  resource_route
+[1m[32m       route[0m    resources :schools
+[1m[37m      invoke[0m  scaffold_controller
+[1m[32m      create[0m    app/controllers/schools_controller.rb
+[1m[37m      invoke[0m    erb
+[1m[32m      create[0m      app/views/schools
+[1m[32m      create[0m      app/views/schools/index.html.erb
+[1m[32m      create[0m      app/views/schools/edit.html.erb
+[1m[32m      create[0m      app/views/schools/show.html.erb
+[1m[32m      create[0m      app/views/schools/new.html.erb
+[1m[32m      create[0m      app/views/schools/_form.html.erb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/functional/schools_controller_test.rb
+[1m[37m      invoke[0m    helper
+[1m[32m      create[0m      app/helpers/schools_helper.rb
+[1m[37m      invoke[0m      test_unit
+[1m[32m      create[0m        test/unit/helpers/schools_helper_test.rb
+[1m[37m      invoke[0m  assets
+[1m[37m      invoke[0m    coffee
+[1m[32m      create[0m      app/assets/javascripts/schools.js.coffee
+[1m[37m      invoke[0m    scss
+[1m[32m      create[0m      app/assets/stylesheets/schools.css.scss
+[1m[37m      invoke[0m  scss
+[1m[34m   identical[0m    app/assets/stylesheets/scaffolds.css.scss
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:migrate
+==  CreateMembers: migrating ==================================================
+-- create_table(:members)
+   -> 0.0096s
+==  CreateMembers: migrated (0.0097s) =========================================
+
+==  CreateSchools: migrating ==================================================
+-- create_table(:schools)
+   -> 0.0018s
+==  CreateSchools: migrated (0.0018s) =========================================
+
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails g bootstrap [K:themed members
+[1m[31m    conflict[0m  app/views/members/index.html.erb
+Overwrite /home/aditya/blue_books/app/views/members/index.html.erb? (enter "h" f[Koor help) [Ynaqdh] Y
+[1m[33m       force[0m  app/views/members/index.html.erb
+[1m[31m    conflict[0m  app/views/members/new.html.erb
+Overwrite /home/aditya/blue_books/app/views/members/new.html.erb? (enter "h" for  help) [Ynaqdh] Y
+[1m[33m       force[0m  app/views/members/new.html.erb
+[1m[31m    conflict[0m  app/views/members/edit.html.erb
+Overwrite /home/aditya/blue_books/app/views/members/edit.html.erb? (enter "h" forr help) [Ynaqdh] Ya
+        Y - yes, overwrite
+        n - no, do not overwrite
+        a - all, overwrite this and all others
+        q - quit, abort
+        d - diff, show the differences between the old and the new
+        h - help, show this help
+Overwrite /home/aditya/blue_books/app/views/members/edit.html.erb? (enter "h" forr help) [Ynaqdh] a
+[1m[33m       force[0m  app/views/members/edit.html.erb
+[1m[31m    conflict[0m  app/views/members/_form.html.erb
+[1m[33m       force[0m  app/views/members/_form.html.erb
+[1m[31m    conflict[0m  app/views/members/show.html.erb
+[1m[33m       force[0m  app/views/members/show.html.erb
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails g bootstrap:themed members[K[K[K[K[K[K[Kschools
+[1m[31m    conflict[0m  app/views/schools/index.html.erb
+Overwrite /home/aditya/blue_books/app/views/schools/index.html.erb? (enter "h" f[Koor help) [Ynaqdh] a
+[1m[33m       force[0m  app/views/schools/index.html.erb
+[1m[31m    conflict[0m  app/views/schools/new.html.erb
+[1m[33m       force[0m  app/views/schools/new.html.erb
+[1m[31m    conflict[0m  app/views/schools/edit.html.erb
+[1m[33m       force[0m  app/views/schools/edit.html.erb
+[1m[31m    conflict[0m  app/views/schools/_form.html.erb
+[1m[33m       force[0m  app/views/schools/_form.html.erb
+[1m[31m    conflict[0m  app/views/schools/show.html.erb
+[1m[33m       force[0m  app/views/schools/show.html.erb
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails generated[K cucmber [K:install
+Could not find generator cucmber:install.
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails generate cucmber:install[C[Cumber:install
+[1m[34m   identical[0m  config/cucumber.yml
+[1m[34m   identical[0m  script/cucumber
+[1m[32m       chmod[0m  script/cucumber
+[1m[34m       exist[0m  features/step_definitions
+[1m[34m   identical[0m  features/step_definitions/.gitkeep
+[1m[34m       exist[0m  features/support
+[1m[34m   identical[0m  features/support/env.rb
+[1m[34m       exist[0m  lib/tasks
+[1m[34m   identical[0m  lib/tasks/cucumber.rake
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ annotate
+Annotated (2): Member, School
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails g migration add_school_id_to_Members school_id :integer
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20141119235816_add_school_id_to_members.rb
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ annotate
+Nothing annotated.
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ annotate
+Nothing annotated.
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ annotate
+Nothing annotated.
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:migrate
+==  AddSchoolIdToMembers: migrating ===========================================
+-- add_column(:members, :school_id, :integer)
+   -> 0.0310s
+==  AddSchoolIdToMembers: migrated (0.0311s) ==================================
+
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:migrate[7Pannotaterails g migration add_school_id_to_Members school_id::integer
+[1m[37m      invoke[0m  active_record
+Another migration is already named add_school_id_to_members: /home/aditya/blue_books/db/migrate/20141119235816_add_school_id_to_members.rb
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails g migration add_school_id_to_Members school_id::integer[A]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [C[Cke db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pannotate
+Annotated (1): Member
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rails g cucm[Kumber:install
+[1m[34m   identical[0m  config/cucumber.yml
+[1m[34m   identical[0m  script/cucumber
+[1m[32m       chmod[0m  script/cucumber
+[1m[34m       exist[0m  features/step_definitions
+[1m[34m   identical[0m  features/step_definitions/.gitkeep
+[1m[34m       exist[0m  features/support
+[1m[34m   identical[0m  features/support/env.rb
+[1m[34m       exist[0m  lib/tasks
+[1m[34m   identical[0m  lib/tasks/cucumber.rake
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ bundle[K[K[K[K[K[Krake db:reset
+-- create_table("email_addresses", {:force=>true})
+   -> 0.0533s
+-- create_table("email_groups", {:force=>true})
+   -> 0.0079s
+-- create_table("members", {:force=>true})
+   -> 0.0090s
+-- create_table("request_accesses", {:force=>true})
+   -> 0.0163s
+-- create_table("schools", {:force=>true})
+   -> 0.0215s
+-- initialize_schema_migrations_table()
+   -> 0.0337s
+-- assume_migrated_upto_version(20141119235816, ["/home/aditya/blue_books/db/migrate"])
+   -> 0.1240s
+rake aborted!
+ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: email_school_id
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activemodel-3.2.19/lib/active_model/mass_assignment_security/sanitizer.rb:48:in `process_removed_attributes'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activemodel-3.2.19/lib/active_model/mass_assignment_security/sanitizer.rb:20:in `debug_protected_attribute_removal'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activemodel-3.2.19/lib/active_model/mass_assignment_security/sanitizer.rb:12:in `sanitize'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activemodel-3.2.19/lib/active_model/mass_assignment_security.rb:230:in `sanitize_for_mass_assignment'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/attribute_assignment.rb:75:in `assign_attributes'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/base.rb:498:in `initialize'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/persistence.rb:44:in `new'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/persistence.rb:44:in `create'
+/home/aditya/blue_books/db/seeds.rb:32:in `<top (required)>'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:245:in `load'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:245:in `block in load'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:236:in `load_dependency'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:245:in `load'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/railties-3.2.19/lib/rails/engine.rb:525:in `load_seed'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/railties/databases.rake:347:in `block (2 levels) in <top (required)>'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/railties/databases.rake:290:in `block (2 levels) in <top (required)>'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/bin/ruby_executable_hooks:15:in `eval'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => db:setup => db:seed
+(See full trace by running task with --trace)
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [K]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:reset
+-- create_table("email_addresses", {:force=>true})
+   -> 0.0272s
+-- create_table("email_groups", {:force=>true})
+   -> 0.0167s
+-- create_table("members", {:force=>true})
+   -> 0.0132s
+-- create_table("request_accesses", {:force=>true})
+   -> 0.0099s
+-- create_table("schools", {:force=>true})
+   -> 0.0098s
+-- initialize_schema_migrations_table()
+   -> 0.0299s
+-- assume_migrated_upto_version(20141119235816, ["/home/aditya/blue_books/db/migrate"])
+   -> 0.1139s
+rake aborted!
+ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: email_school_id
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activemodel-3.2.19/lib/active_model/mass_assignment_security/sanitizer.rb:48:in `process_removed_attributes'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activemodel-3.2.19/lib/active_model/mass_assignment_security/sanitizer.rb:20:in `debug_protected_attribute_removal'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activemodel-3.2.19/lib/active_model/mass_assignment_security/sanitizer.rb:12:in `sanitize'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activemodel-3.2.19/lib/active_model/mass_assignment_security.rb:230:in `sanitize_for_mass_assignment'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/attribute_assignment.rb:75:in `assign_attributes'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/base.rb:498:in `initialize'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/persistence.rb:44:in `new'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/persistence.rb:44:in `create'
+/home/aditya/blue_books/db/seeds.rb:32:in `<top (required)>'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:245:in `load'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:245:in `block in load'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:236:in `load_dependency'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:245:in `load'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/railties-3.2.19/lib/rails/engine.rb:525:in `load_seed'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/railties/databases.rake:347:in `block (2 levels) in <top (required)>'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/gems/activerecord-3.2.19/lib/active_record/railties/databases.rake:290:in `block (2 levels) in <top (required)>'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/bin/ruby_executable_hooks:15:in `eval'
+/home/aditya/.rvm/gems/ruby-2.0.0-p481/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => db:setup => db:seed
+(See full trace by running task with --trace)
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:reset
+-- create_table("email_addresses", {:force=>true})
+   -> 0.0287s
+-- create_table("email_groups", {:force=>true})
+   -> 0.0092s
+-- create_table("members", {:force=>true})
+   -> 0.0096s
+-- create_table("request_accesses", {:force=>true})
+   -> 0.0086s
+-- create_table("schools", {:force=>true})
+   -> 0.0105s
+-- initialize_schema_migrations_table()
+   -> 0.0165s
+-- assume_migrated_upto_version(20141119235816, ["/home/aditya/blue_books/db/migrate"])
+   -> 0.0964s
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:resetils g cucumber:install[16Pannotaterails g cucumber:install[11Pke db:reset[Kbundle exec cucmber
+[31mbundler: command not found: cucmber[0m
+[33mInstall missing gem executables with `bundle install`[0m
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ bundle exec cucmberumber
+Using the default profile...
+Feature: Manage Email Groups
+  
+  As an Administrator
+  I want to manage email groups
+  so that I can choose who is to be informed about certain updates.
+
+  Scenario: Add an email group[90m                                   # features/manage_email_groups.feature:7[0m
+    [31mGiven I'm on the email group creation page[90m                   # features/step_definitions/steps.rb:39[0m[0m
+[31m      Could not find table 'email_groups' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:40:in `/^I'm on the email group creation page$/'[0m
+[31m      features/manage_email_groups.feature:8:in `Given I'm on the email group creation page'[0m
+    [36mWhen I add a new email group[90m                                 # features/step_definitions/steps.rb:43[0m[0m
+    [36mThen I should see the confirmation of email group's creation[90m # features/step_definitions/steps.rb:48[0m[0m
+
+  Scenario: Add an email address[90m                                   # features/manage_email_groups.feature:12[0m
+    [31mGiven I'm on the email address addition page[90m                   # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:13:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address[90m                                 # features/step_definitions/steps.rb:56[0m[0m
+    [36mThen I should see the confirmation of email address's creation[90m # features/step_definitions/steps.rb:62[0m[0m
+
+  Scenario: Add an email group without name[90m    # features/manage_email_groups.feature:17[0m
+    [31mGiven I'm on the email group creation page[90m # features/step_definitions/steps.rb:39[0m[0m
+[31m      Could not find table 'email_groups' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:40:in `/^I'm on the email group creation page$/'[0m
+[31m      features/manage_email_groups.feature:18:in `Given I'm on the email group creation page'[0m
+    [36mWhen I add a new email group with no name[90m  # features/step_definitions/steps.rb:66[0m[0m
+    [36mThen I should see errors on the page[90m       # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address without name[90m    # features/manage_email_groups.feature:22[0m
+    [31mGiven I'm on the email address addition page[90m # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:23:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address with no name[90m  # features/step_definitions/steps.rb:70[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address without email group[90m   # features/manage_email_groups.feature:27[0m
+    [31mGiven I'm on the email address addition page[90m       # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:28:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address with no email group[90m # features/step_definitions/steps.rb:74[0m[0m
+    [36mThen I should see errors on the page[90m               # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address which does not satisfy "local-part@domain" syntax[90m # features/manage_email_groups.feature:32[0m
+    [31mGiven I'm on the email address addition page[90m                                   # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:33:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address in incorrect format[90m                             # features/step_definitions/steps.rb:79[0m[0m
+    [36mThen I should see errors on the page[90m                                           # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Manage Schools
+  
+  As an Administrator
+  I want to manage schools
+  so that I can categorize users based on the schools that they are affiliated with.
+
+  Scenario: Add an school[90m                                   # features/manage_schools.feature:7[0m
+    [33mGiven I'm on the school creation page[90m                   # features/manage_schools.feature:8[0m[0m
+[33m      Undefined step: "I'm on the school creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_schools.feature:8:in `Given I'm on the school creation page'[0m
+    [33mWhen I add a new school[90m                                 # features/manage_schools.feature:9[0m[0m
+[33m      Undefined step: "I add a new school" (Cucumber::Undefined)[0m
+[33m      features/manage_schools.feature:9:in `When I add a new school'[0m
+    [33mThen I should see the confirmation of school's creation[90m # features/manage_schools.feature:10[0m[0m
+[33m      Undefined step: "I should see the confirmation of school's creation" (Cucumber::Undefined)[0m
+[33m      features/manage_schools.feature:10:in `Then I should see the confirmation of school's creation'[0m
+
+  Scenario: Add a school without name[90m     # features/manage_schools.feature:12[0m
+    [33mGiven I'm on the school creation page[90m # features/manage_schools.feature:13[0m[0m
+[33m      Undefined step: "I'm on the school creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_schools.feature:13:in `Given I'm on the school creation page'[0m
+    [33mWhen I add a new school with no name[90m  # features/manage_schools.feature:14[0m[0m
+[33m      Undefined step: "I add a new school with no name" (Cucumber::Undefined)[0m
+[33m      features/manage_schools.feature:14:in `When I add a new school with no name'[0m
+    [36mThen I should see errors on the page[90m  # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing school[90m            # features/manage_schools.feature:17[0m
+    [33mGiven I'm on the school creation page[90m        # features/manage_schools.feature:18[0m[0m
+[33m      Undefined step: "I'm on the school creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_schools.feature:18:in `Given I'm on the school creation page'[0m
+    [33mWhen I add a new school which already exists[90m # features/manage_schools.feature:19[0m[0m
+[33m      Undefined step: "I add a new school which already exists" (Cucumber::Undefined)[0m
+[33m      features/manage_schools.feature:19:in `When I add a new school which already exists'[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Manage Users
+  
+  As an Administrator
+  I want to manage users
+  so that I can keep a record of the users' information
+
+  Scenario: Add an user[90m                                     # features/manage_users.feature:7[0m
+    [33mGiven I'm on the user creation page[90m                     # features/manage_users.feature:8[0m[0m
+[33m      Undefined step: "I'm on the user creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:8:in `Given I'm on the user creation page'[0m
+    [33mWhen I add a new user[90m                                   # features/manage_users.feature:9[0m[0m
+[33m      Undefined step: "I add a new user" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:9:in `When I add a new user'[0m
+    [33mThen I should see the confirmation of a user's creation[90m # features/manage_users.feature:10[0m[0m
+[33m      Undefined step: "I should see the confirmation of a user's creation" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:10:in `Then I should see the confirmation of a user's creation'[0m
+
+  Scenario: Add a user without first name[90m    # features/manage_users.feature:12[0m
+    [33mGiven I'm on the user creation page[90m      # features/manage_users.feature:13[0m[0m
+[33m      Undefined step: "I'm on the user creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:13:in `Given I'm on the user creation page'[0m
+    [33mWhen I add a new user with no first name[90m # features/manage_users.feature:14[0m[0m
+[33m      Undefined step: "I add a new user with no first name" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:14:in `When I add a new user with no first name'[0m
+    [36mThen I should see errors on the page[90m     # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a user without last name[90m    # features/manage_users.feature:17[0m
+    [33mGiven I'm on the user creation page[90m     # features/manage_users.feature:18[0m[0m
+[33m      Undefined step: "I'm on the user creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:18:in `Given I'm on the user creation page'[0m
+    [33mWhen I add a new user with no last name[90m # features/manage_users.feature:19[0m[0m
+[33m      Undefined step: "I add a new user with no last name" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:19:in `When I add a new user with no last name'[0m
+    [36mThen I should see errors on the page[90m    # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a user without pennkey[90m    # features/manage_users.feature:22[0m
+    [33mGiven I'm on the user creation page[90m   # features/manage_users.feature:23[0m[0m
+[33m      Undefined step: "I'm on the user creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:23:in `Given I'm on the user creation page'[0m
+    [33mWhen I add a new user with no pennkey[90m # features/manage_users.feature:24[0m[0m
+[33m      Undefined step: "I add a new user with no pennkey" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:24:in `When I add a new user with no pennkey'[0m
+    [36mThen I should see errors on the page[90m  # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a user without school[90m    # features/manage_users.feature:27[0m
+    [33mGiven I'm on the user creation page[90m  # features/manage_users.feature:28[0m[0m
+[33m      Undefined step: "I'm on the user creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:28:in `Given I'm on the user creation page'[0m
+    [33mWhen I add a new user with no school[90m # features/manage_users.feature:29[0m[0m
+[33m      Undefined step: "I add a new user with no school" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:29:in `When I add a new user with no school'[0m
+    [36mThen I should see errors on the page[90m # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a user without name[90m      # features/manage_users.feature:32[0m
+    [33mGiven I'm on the user creation page[90m  # features/manage_users.feature:33[0m[0m
+[33m      Undefined step: "I'm on the user creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:33:in `Given I'm on the user creation page'[0m
+    [33mWhen I add a new user with no name[90m   # features/manage_users.feature:34[0m[0m
+[33m      Undefined step: "I add a new user with no name" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:34:in `When I add a new user with no name'[0m
+    [36mThen I should see errors on the page[90m # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing pennkey[90m             # features/manage_users.feature:37[0m
+    [33mGiven I'm on the user creation page[90m            # features/manage_users.feature:38[0m[0m
+[33m      Undefined step: "I'm on the user creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:38:in `Given I'm on the user creation page'[0m
+    [33mWhen I add a new user with a duplicate pennkey[90m # features/manage_users.feature:39[0m[0m
+[33m      Undefined step: "I add a new user with a duplicate pennkey" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:39:in `When I add a new user with a duplicate pennkey'[0m
+    [36mThen I should see errors on the page[90m           # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing email address[90m             # features/manage_users.feature:42[0m
+    [33mGiven I'm on the user creation page[90m                  # features/manage_users.feature:43[0m[0m
+[33m      Undefined step: "I'm on the user creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:43:in `Given I'm on the user creation page'[0m
+    [33mWhen I add a new user with a duplicate email address[90m # features/manage_users.feature:44[0m[0m
+[33m      Undefined step: "I add a new user with a duplicate email address" (Cucumber::Undefined)[0m
+[33m      features/manage_users.feature:44:in `When I add a new user with a duplicate email address'[0m
+    [36mThen I should see errors on the page[90m                 # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Request Access
+  
+  As a User
+  I want to request the administrator for a higher access privilege
+  so that I can view/modify the documents which I am not allowed to see or update.
+
+  Scenario: Add a request[90m                            # features/request_access.feature:7[0m
+    [31mGiven I'm on the request submission page[90m         # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:8:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request[90m                         # features/step_definitions/steps.rb:6[0m[0m
+    [36mThen I should see the confirmation of email sent[90m # features/step_definitions/steps.rb:12[0m[0m
+
+  Scenario: Add a request without subject[90m    # features/request_access.feature:12[0m
+    [31mGiven I'm on the request submission page[90m # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:13:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request with no subject[90m # features/step_definitions/steps.rb:16[0m[0m
+    [36mThen I should see errors on the page[90m     # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a request without description[90m    # features/request_access.feature:17[0m
+    [31mGiven I'm on the request submission page[90m     # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:18:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request with no description[90m # features/step_definitions/steps.rb:25[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+[31mFailing Scenarios:[0m
+[31mcucumber features/manage_email_groups.feature:7[0m[90m # Scenario: Add an email group[0m
+[31mcucumber features/manage_email_groups.feature:12[0m[90m # Scenario: Add an email address[0m
+[31mcucumber features/manage_email_groups.feature:17[0m[90m # Scenario: Add an email group without name[0m
+[31mcucumber features/manage_email_groups.feature:22[0m[90m # Scenario: Add an email address without name[0m
+[31mcucumber features/manage_email_groups.feature:27[0m[90m # Scenario: Add an email address without email group[0m
+[31mcucumber features/manage_email_groups.feature:32[0m[90m # Scenario: Add an email address which does not satisfy "local-part@domain" syntax[0m
+[31mcucumber features/request_access.feature:7[0m[90m # Scenario: Add a request[0m
+[31mcucumber features/request_access.feature:12[0m[90m # Scenario: Add a request without subject[0m
+[31mcucumber features/request_access.feature:17[0m[90m # Scenario: Add a request without description[0m
+
+20 scenarios ([31m9 failed[0m, [33m11 undefined[0m)
+60 steps ([31m9 failed[0m, [36m27 skipped[0m, [33m24 undefined[0m)
+0m1.015s
+[33m[0m
+[33mYou can implement step definitions for undefined steps with these snippets:[0m
+[33m[0m
+[33mGiven(/^I'm on the school creation page$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new school$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mThen(/^I should see the confirmation of school's creation$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new school with no name$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new school which already exists$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mGiven(/^I'm on the user creation page$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new user$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mThen(/^I should see the confirmation of a user's creation$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new user with no first name$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new user with no last name$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new user with no pennkey$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new user with no school$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new user with no name$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new user with a duplicate pennkey$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new user with a duplicate email address$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ A[K]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ A[H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ A[Krake routes
+            schools GET    /schools(.:format)                   schools#index
+                    POST   /schools(.:format)                   schools#create
+         new_school GET    /schools/new(.:format)               schools#new
+        edit_school GET    /schools/:id/edit(.:format)          schools#edit
+             school GET    /schools/:id(.:format)               schools#show
+                    PUT    /schools/:id(.:format)               schools#update
+                    DELETE /schools/:id(.:format)               schools#destroy
+            members GET    /members(.:format)                   members#index
+                    POST   /members(.:format)                   members#create
+         new_member GET    /members/new(.:format)               members#new
+        edit_member GET    /members/:id/edit(.:format)          members#edit
+             member GET    /members/:id(.:format)               members#show
+                    PUT    /members/:id(.:format)               members#update
+                    DELETE /members/:id(.:format)               members#destroy
+    email_addresses GET    /email_addresses(.:format)           email_addresses#index
+                    POST   /email_addresses(.:format)           email_addresses#create
+  new_email_address GET    /email_addresses/new(.:format)       email_addresses#new
+ edit_email_address GET    /email_addresses/:id/edit(.:format)  email_addresses#edit
+      email_address GET    /email_addresses/:id(.:format)       email_addresses#show
+                    PUT    /email_addresses/:id(.:format)       email_addresses#update
+                    DELETE /email_addresses/:id(.:format)       email_addresses#destroy
+       email_groups GET    /email_groups(.:format)              email_groups#index
+                    POST   /email_groups(.:format)              email_groups#create
+    new_email_group GET    /email_groups/new(.:format)          email_groups#new
+   edit_email_group GET    /email_groups/:id/edit(.:format)     email_groups#edit
+        email_group GET    /email_groups/:id(.:format)          email_groups#show
+                    PUT    /email_groups/:id(.:format)          email_groups#update
+                    DELETE /email_groups/:id(.:format)          email_groups#destroy
+   request_accesses GET    /request_accesses(.:format)          request_accesses#index
+                    POST   /request_accesses(.:format)          request_accesses#create
+ new_request_access GET    /request_accesses/new(.:format)      request_accesses#new
+edit_request_access GET    /request_accesses/:id/edit(.:format) request_accesses#edit
+     request_access GET    /request_accesses/:id(.:format)      request_accesses#show
+                    PUT    /request_accesses/:id(.:format)      request_accesses#update
+                    DELETE /request_accesses/:id(.:format)      request_accesses#destroy
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [K]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake routesbundle exec cucumber
+Using the default profile...
+Feature: Manage Email Groups
+  
+  As an Administrator
+  I want to manage email groups
+  so that I can choose who is to be informed about certain updates.
+
+  Scenario: Add an email group[90m                                   # features/manage_email_groups.feature:7[0m
+    [31mGiven I'm on the email group creation page[90m                   # features/step_definitions/steps.rb:39[0m[0m
+[31m      Could not find table 'email_groups' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:40:in `/^I'm on the email group creation page$/'[0m
+[31m      features/manage_email_groups.feature:8:in `Given I'm on the email group creation page'[0m
+    [36mWhen I add a new email group[90m                                 # features/step_definitions/steps.rb:43[0m[0m
+    [36mThen I should see the confirmation of email group's creation[90m # features/step_definitions/steps.rb:48[0m[0m
+
+  Scenario: Add an email address[90m                                   # features/manage_email_groups.feature:12[0m
+    [31mGiven I'm on the email address addition page[90m                   # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:13:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address[90m                                 # features/step_definitions/steps.rb:56[0m[0m
+    [36mThen I should see the confirmation of email address's creation[90m # features/step_definitions/steps.rb:62[0m[0m
+
+  Scenario: Add an email group without name[90m    # features/manage_email_groups.feature:17[0m
+    [31mGiven I'm on the email group creation page[90m # features/step_definitions/steps.rb:39[0m[0m
+[31m      Could not find table 'email_groups' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:40:in `/^I'm on the email group creation page$/'[0m
+[31m      features/manage_email_groups.feature:18:in `Given I'm on the email group creation page'[0m
+    [36mWhen I add a new email group with no name[90m  # features/step_definitions/steps.rb:66[0m[0m
+    [36mThen I should see errors on the page[90m       # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address without name[90m    # features/manage_email_groups.feature:22[0m
+    [31mGiven I'm on the email address addition page[90m # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:23:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address with no name[90m  # features/step_definitions/steps.rb:70[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address without email group[90m   # features/manage_email_groups.feature:27[0m
+    [31mGiven I'm on the email address addition page[90m       # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:28:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address with no email group[90m # features/step_definitions/steps.rb:74[0m[0m
+    [36mThen I should see errors on the page[90m               # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address which does not satisfy "local-part@domain" syntax[90m # features/manage_email_groups.feature:32[0m
+    [31mGiven I'm on the email address addition page[90m                                   # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:33:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address in incorrect format[90m                             # features/step_definitions/steps.rb:79[0m[0m
+    [36mThen I should see errors on the page[90m                                           # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Manage Members
+  
+  As an Administrator
+  I want to manage members
+  so that I can keep a record of the members' information
+
+  Scenario: Add an member[90m                                     # features/manage_members.feature:7[0m
+    [33mGiven I'm on the member creation page[90m                     # features/manage_members.feature:8[0m[0m
+[33m      Undefined step: "I'm on the member creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:8:in `Given I'm on the member creation page'[0m
+    [33mWhen I add a new member[90m                                   # features/manage_members.feature:9[0m[0m
+[33m      Undefined step: "I add a new member" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:9:in `When I add a new member'[0m
+    [33mThen I should see the confirmation of a member's creation[90m # features/manage_members.feature:10[0m[0m
+[33m      Undefined step: "I should see the confirmation of a member's creation" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:10:in `Then I should see the confirmation of a member's creation'[0m
+
+  Scenario: Add a member without first name[90m    # features/manage_members.feature:12[0m
+    [33mGiven I'm on the member creation page[90m      # features/manage_members.feature:13[0m[0m
+[33m      Undefined step: "I'm on the member creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:13:in `Given I'm on the member creation page'[0m
+    [33mWhen I add a new member with no first name[90m # features/manage_members.feature:14[0m[0m
+[33m      Undefined step: "I add a new member with no first name" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:14:in `When I add a new member with no first name'[0m
+    [36mThen I should see errors on the page[90m       # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without last name[90m    # features/manage_members.feature:17[0m
+    [33mGiven I'm on the member creation page[90m     # features/manage_members.feature:18[0m[0m
+[33m      Undefined step: "I'm on the member creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:18:in `Given I'm on the member creation page'[0m
+    [33mWhen I add a new member with no last name[90m # features/manage_members.feature:19[0m[0m
+[33m      Undefined step: "I add a new member with no last name" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:19:in `When I add a new member with no last name'[0m
+    [36mThen I should see errors on the page[90m      # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without pennkey[90m    # features/manage_members.feature:22[0m
+    [33mGiven I'm on the member creation page[90m   # features/manage_members.feature:23[0m[0m
+[33m      Undefined step: "I'm on the member creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:23:in `Given I'm on the member creation page'[0m
+    [33mWhen I add a new member with no pennkey[90m # features/manage_members.feature:24[0m[0m
+[33m      Undefined step: "I add a new member with no pennkey" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:24:in `When I add a new member with no pennkey'[0m
+    [36mThen I should see errors on the page[90m    # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without school[90m    # features/manage_members.feature:27[0m
+    [33mGiven I'm on the member creation page[90m  # features/manage_members.feature:28[0m[0m
+[33m      Undefined step: "I'm on the member creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:28:in `Given I'm on the member creation page'[0m
+    [33mWhen I add a new member with no school[90m # features/manage_members.feature:29[0m[0m
+[33m      Undefined step: "I add a new member with no school" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:29:in `When I add a new member with no school'[0m
+    [36mThen I should see errors on the page[90m   # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without name[90m     # features/manage_members.feature:32[0m
+    [33mGiven I'm on the member creation page[90m # features/manage_members.feature:33[0m[0m
+[33m      Undefined step: "I'm on the member creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:33:in `Given I'm on the member creation page'[0m
+    [33mWhen I add a new member with no name[90m  # features/manage_members.feature:34[0m[0m
+[33m      Undefined step: "I add a new member with no name" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:34:in `When I add a new member with no name'[0m
+    [36mThen I should see errors on the page[90m  # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing pennkey[90m               # features/manage_members.feature:37[0m
+    [33mGiven I'm on the member creation page[90m            # features/manage_members.feature:38[0m[0m
+[33m      Undefined step: "I'm on the member creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:38:in `Given I'm on the member creation page'[0m
+    [33mWhen I add a new member with a duplicate pennkey[90m # features/manage_members.feature:39[0m[0m
+[33m      Undefined step: "I add a new member with a duplicate pennkey" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:39:in `When I add a new member with a duplicate pennkey'[0m
+    [36mThen I should see errors on the page[90m             # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing email address[90m               # features/manage_members.feature:42[0m
+    [33mGiven I'm on the member creation page[90m                  # features/manage_members.feature:43[0m[0m
+[33m      Undefined step: "I'm on the member creation page" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:43:in `Given I'm on the member creation page'[0m
+    [33mWhen I add a new member with a duplicate email address[90m # features/manage_members.feature:44[0m[0m
+[33m      Undefined step: "I add a new member with a duplicate email address" (Cucumber::Undefined)[0m
+[33m      features/manage_members.feature:44:in `When I add a new member with a duplicate email address'[0m
+    [36mThen I should see errors on the page[90m                   # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Manage Schools
+  
+  As an Administrator
+  I want to manage schools
+  so that I can categorize users based on the schools that they are affiliated with.
+
+  Scenario: Add an school[90m                                   # features/manage_schools.feature:7[0m
+    [31mGiven I'm on the school creation page[90m                   # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:8:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school[90m                                 # features/step_definitions/steps.rb:94[0m[0m
+    [36mThen I should see the confirmation of school's creation[90m # features/step_definitions/steps.rb:99[0m[0m
+
+  Scenario: Add a school without name[90m     # features/manage_schools.feature:12[0m
+    [31mGiven I'm on the school creation page[90m # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:13:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school with no name[90m  # features/step_definitions/steps.rb:103[0m[0m
+    [36mThen I should see errors on the page[90m  # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing school[90m            # features/manage_schools.feature:17[0m
+    [31mGiven I'm on the school creation page[90m        # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:18:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school which already exists[90m # features/step_definitions/steps.rb:107[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Request Access
+  
+  As a User
+  I want to request the administrator for a higher access privilege
+  so that I can view/modify the documents which I am not allowed to see or update.
+
+  Scenario: Add a request[90m                            # features/request_access.feature:7[0m
+    [31mGiven I'm on the request submission page[90m         # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:8:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request[90m                         # features/step_definitions/steps.rb:6[0m[0m
+    [36mThen I should see the confirmation of email sent[90m # features/step_definitions/steps.rb:12[0m[0m
+
+  Scenario: Add a request without subject[90m    # features/request_access.feature:12[0m
+    [31mGiven I'm on the request submission page[90m # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:13:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request with no subject[90m # features/step_definitions/steps.rb:16[0m[0m
+    [36mThen I should see errors on the page[90m     # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a request without description[90m    # features/request_access.feature:17[0m
+    [31mGiven I'm on the request submission page[90m     # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:18:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request with no description[90m # features/step_definitions/steps.rb:25[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+[31mFailing Scenarios:[0m
+[31mcucumber features/manage_email_groups.feature:7[0m[90m # Scenario: Add an email group[0m
+[31mcucumber features/manage_email_groups.feature:12[0m[90m # Scenario: Add an email address[0m
+[31mcucumber features/manage_email_groups.feature:17[0m[90m # Scenario: Add an email group without name[0m
+[31mcucumber features/manage_email_groups.feature:22[0m[90m # Scenario: Add an email address without name[0m
+[31mcucumber features/manage_email_groups.feature:27[0m[90m # Scenario: Add an email address without email group[0m
+[31mcucumber features/manage_email_groups.feature:32[0m[90m # Scenario: Add an email address which does not satisfy "local-part@domain" syntax[0m
+[31mcucumber features/manage_schools.feature:7[0m[90m # Scenario: Add an school[0m
+[31mcucumber features/manage_schools.feature:12[0m[90m # Scenario: Add a school without name[0m
+[31mcucumber features/manage_schools.feature:17[0m[90m # Scenario: Add a pre-existing school[0m
+[31mcucumber features/request_access.feature:7[0m[90m # Scenario: Add a request[0m
+[31mcucumber features/request_access.feature:12[0m[90m # Scenario: Add a request without subject[0m
+[31mcucumber features/request_access.feature:17[0m[90m # Scenario: Add a request without description[0m
+
+20 scenarios ([31m12 failed[0m, [33m8 undefined[0m)
+60 steps ([31m12 failed[0m, [36m31 skipped[0m, [33m17 undefined[0m)
+0m1.605s
+[33m[0m
+[33mYou can implement step definitions for undefined steps with these snippets:[0m
+[33m[0m
+[33mGiven(/^I'm on the member creation page$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new member$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mThen(/^I should see the confirmation of a member's creation$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new member with no first name$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new member with no last name$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new member with no pennkey$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new member with no school$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new member with no name$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new member with a duplicate pennkey$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+[33m[0m
+[33mWhen(/^I add a new member with a duplicate email address$/) do[0m
+[33m  pending # express the regexp above with the code you wish you had[0m
+[33mend[0m
+
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ bundle exec cucumber[9Prake routes
+            schools GET    /schools(.:format)                   schools#index
+                    POST   /schools(.:format)                   schools#create
+         new_school GET    /schools/new(.:format)               schools#new
+        edit_school GET    /schools/:id/edit(.:format)          schools#edit
+             school GET    /schools/:id(.:format)               schools#show
+                    PUT    /schools/:id(.:format)               schools#update
+                    DELETE /schools/:id(.:format)               schools#destroy
+            members GET    /members(.:format)                   members#index
+                    POST   /members(.:format)                   members#create
+         new_member GET    /members/new(.:format)               members#new
+        edit_member GET    /members/:id/edit(.:format)          members#edit
+             member GET    /members/:id(.:format)               members#show
+                    PUT    /members/:id(.:format)               members#update
+                    DELETE /members/:id(.:format)               members#destroy
+    email_addresses GET    /email_addresses(.:format)           email_addresses#index
+                    POST   /email_addresses(.:format)           email_addresses#create
+  new_email_address GET    /email_addresses/new(.:format)       email_addresses#new
+ edit_email_address GET    /email_addresses/:id/edit(.:format)  email_addresses#edit
+      email_address GET    /email_addresses/:id(.:format)       email_addresses#show
+                    PUT    /email_addresses/:id(.:format)       email_addresses#update
+                    DELETE /email_addresses/:id(.:format)       email_addresses#destroy
+       email_groups GET    /email_groups(.:format)              email_groups#index
+                    POST   /email_groups(.:format)              email_groups#create
+    new_email_group GET    /email_groups/new(.:format)          email_groups#new
+   edit_email_group GET    /email_groups/:id/edit(.:format)     email_groups#edit
+        email_group GET    /email_groups/:id(.:format)          email_groups#show
+                    PUT    /email_groups/:id(.:format)          email_groups#update
+                    DELETE /email_groups/:id(.:format)          email_groups#destroy
+   request_accesses GET    /request_accesses(.:format)          request_accesses#index
+                    POST   /request_accesses(.:format)          request_accesses#create
+ new_request_access GET    /request_accesses/new(.:format)      request_accesses#new
+edit_request_access GET    /request_accesses/:id/edit(.:format) request_accesses#edit
+     request_access GET    /request_accesses/:id(.:format)      request_accesses#show
+                    PUT    /request_accesses/:id(.:format)      request_accesses#update
+                    DELETE /request_accesses/:id(.:format)      request_accesses#destroy
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [K]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake routesbundle exec cucumber
+Using the default profile...
+Feature: Manage Email Groups
+  
+  As an Administrator
+  I want to manage email groups
+  so that I can choose who is to be informed about certain updates.
+
+  Scenario: Add an email group[90m                                   # features/manage_email_groups.feature:7[0m
+    [31mGiven I'm on the email group creation page[90m                   # features/step_definitions/steps.rb:39[0m[0m
+[31m      Could not find table 'email_groups' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:40:in `/^I'm on the email group creation page$/'[0m
+[31m      features/manage_email_groups.feature:8:in `Given I'm on the email group creation page'[0m
+    [36mWhen I add a new email group[90m                                 # features/step_definitions/steps.rb:43[0m[0m
+    [36mThen I should see the confirmation of email group's creation[90m # features/step_definitions/steps.rb:48[0m[0m
+
+  Scenario: Add an email address[90m                                   # features/manage_email_groups.feature:12[0m
+    [31mGiven I'm on the email address addition page[90m                   # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:13:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address[90m                                 # features/step_definitions/steps.rb:56[0m[0m
+    [36mThen I should see the confirmation of email address's creation[90m # features/step_definitions/steps.rb:62[0m[0m
+
+  Scenario: Add an email group without name[90m    # features/manage_email_groups.feature:17[0m
+    [31mGiven I'm on the email group creation page[90m # features/step_definitions/steps.rb:39[0m[0m
+[31m      Could not find table 'email_groups' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:40:in `/^I'm on the email group creation page$/'[0m
+[31m      features/manage_email_groups.feature:18:in `Given I'm on the email group creation page'[0m
+    [36mWhen I add a new email group with no name[90m  # features/step_definitions/steps.rb:66[0m[0m
+    [36mThen I should see errors on the page[90m       # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address without name[90m    # features/manage_email_groups.feature:22[0m
+    [31mGiven I'm on the email address addition page[90m # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:23:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address with no name[90m  # features/step_definitions/steps.rb:70[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address without email group[90m   # features/manage_email_groups.feature:27[0m
+    [31mGiven I'm on the email address addition page[90m       # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:28:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address with no email group[90m # features/step_definitions/steps.rb:74[0m[0m
+    [36mThen I should see errors on the page[90m               # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address which does not satisfy "local-part@domain" syntax[90m # features/manage_email_groups.feature:32[0m
+    [31mGiven I'm on the email address addition page[90m                                   # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:33:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address in incorrect format[90m                             # features/step_definitions/steps.rb:79[0m[0m
+    [36mThen I should see errors on the page[90m                                           # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Manage Members
+  
+  As an Administrator
+  I want to manage members
+  so that I can keep a record of the members' information
+
+  Scenario: Add an member[90m                                     # features/manage_members.feature:7[0m
+    [31mGiven I'm on the member creation page[90m                     # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:8:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member[90m                                   # features/step_definitions/steps.rb:121[0m[0m
+    [36mThen I should see the confirmation of a member's creation[90m # features/step_definitions/steps.rb:130[0m[0m
+
+  Scenario: Add a member without first name[90m    # features/manage_members.feature:12[0m
+    [31mGiven I'm on the member creation page[90m      # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:13:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no first name[90m # features/step_definitions/steps.rb:134[0m[0m
+    [36mThen I should see errors on the page[90m       # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without last name[90m    # features/manage_members.feature:17[0m
+    [31mGiven I'm on the member creation page[90m     # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:18:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no last name[90m # features/step_definitions/steps.rb:138[0m[0m
+    [36mThen I should see errors on the page[90m      # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without pennkey[90m    # features/manage_members.feature:22[0m
+    [31mGiven I'm on the member creation page[90m   # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:23:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no pennkey[90m # features/step_definitions/steps.rb:142[0m[0m
+    [36mThen I should see errors on the page[90m    # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without school[90m    # features/manage_members.feature:27[0m
+    [31mGiven I'm on the member creation page[90m  # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:28:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no school[90m # features/step_definitions/steps.rb:146[0m[0m
+    [36mThen I should see errors on the page[90m   # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without name[90m     # features/manage_members.feature:32[0m
+    [31mGiven I'm on the member creation page[90m # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:33:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no name[90m  # features/step_definitions/steps.rb:150[0m[0m
+    [36mThen I should see errors on the page[90m  # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing pennkey[90m               # features/manage_members.feature:37[0m
+    [31mGiven I'm on the member creation page[90m            # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:38:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with a duplicate pennkey[90m # features/step_definitions/steps.rb:154[0m[0m
+    [36mThen I should see errors on the page[90m             # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing email address[90m               # features/manage_members.feature:42[0m
+    [31mGiven I'm on the member creation page[90m                  # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:43:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with a duplicate email address[90m # features/step_definitions/steps.rb:158[0m[0m
+    [36mThen I should see errors on the page[90m                   # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Manage Schools
+  
+  As an Administrator
+  I want to manage schools
+  so that I can categorize users based on the schools that they are affiliated with.
+
+  Scenario: Add an school[90m                                   # features/manage_schools.feature:7[0m
+    [31mGiven I'm on the school creation page[90m                   # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:8:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school[90m                                 # features/step_definitions/steps.rb:94[0m[0m
+    [36mThen I should see the confirmation of school's creation[90m # features/step_definitions/steps.rb:99[0m[0m
+
+  Scenario: Add a school without name[90m     # features/manage_schools.feature:12[0m
+    [31mGiven I'm on the school creation page[90m # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:13:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school with no name[90m  # features/step_definitions/steps.rb:103[0m[0m
+    [36mThen I should see errors on the page[90m  # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing school[90m            # features/manage_schools.feature:17[0m
+    [31mGiven I'm on the school creation page[90m        # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:18:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school which already exists[90m # features/step_definitions/steps.rb:107[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Request Access
+  
+  As a User
+  I want to request the administrator for a higher access privilege
+  so that I can view/modify the documents which I am not allowed to see or update.
+
+  Scenario: Add a request[90m                            # features/request_access.feature:7[0m
+    [31mGiven I'm on the request submission page[90m         # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:8:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request[90m                         # features/step_definitions/steps.rb:6[0m[0m
+    [36mThen I should see the confirmation of email sent[90m # features/step_definitions/steps.rb:12[0m[0m
+
+  Scenario: Add a request without subject[90m    # features/request_access.feature:12[0m
+    [31mGiven I'm on the request submission page[90m # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:13:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request with no subject[90m # features/step_definitions/steps.rb:16[0m[0m
+    [36mThen I should see errors on the page[90m     # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a request without description[90m    # features/request_access.feature:17[0m
+    [31mGiven I'm on the request submission page[90m     # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:18:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request with no description[90m # features/step_definitions/steps.rb:25[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+[31mFailing Scenarios:[0m
+[31mcucumber features/manage_email_groups.feature:7[0m[90m # Scenario: Add an email group[0m
+[31mcucumber features/manage_email_groups.feature:12[0m[90m # Scenario: Add an email address[0m
+[31mcucumber features/manage_email_groups.feature:17[0m[90m # Scenario: Add an email group without name[0m
+[31mcucumber features/manage_email_groups.feature:22[0m[90m # Scenario: Add an email address without name[0m
+[31mcucumber features/manage_email_groups.feature:27[0m[90m # Scenario: Add an email address without email group[0m
+[31mcucumber features/manage_email_groups.feature:32[0m[90m # Scenario: Add an email address which does not satisfy "local-part@domain" syntax[0m
+[31mcucumber features/manage_members.feature:7[0m[90m # Scenario: Add an member[0m
+[31mcucumber features/manage_members.feature:12[0m[90m # Scenario: Add a member without first name[0m
+[31mcucumber features/manage_members.feature:17[0m[90m # Scenario: Add a member without last name[0m
+[31mcucumber features/manage_members.feature:22[0m[90m # Scenario: Add a member without pennkey[0m
+[31mcucumber features/manage_members.feature:27[0m[90m # Scenario: Add a member without school[0m
+[31mcucumber features/manage_members.feature:32[0m[90m # Scenario: Add a member without name[0m
+[31mcucumber features/manage_members.feature:37[0m[90m # Scenario: Add a pre-existing pennkey[0m
+[31mcucumber features/manage_members.feature:42[0m[90m # Scenario: Add a pre-existing email address[0m
+[31mcucumber features/manage_schools.feature:7[0m[90m # Scenario: Add an school[0m
+[31mcucumber features/manage_schools.feature:12[0m[90m # Scenario: Add a school without name[0m
+[31mcucumber features/manage_schools.feature:17[0m[90m # Scenario: Add a pre-existing school[0m
+[31mcucumber features/request_access.feature:7[0m[90m # Scenario: Add a request[0m
+[31mcucumber features/request_access.feature:12[0m[90m # Scenario: Add a request without subject[0m
+[31mcucumber features/request_access.feature:17[0m[90m # Scenario: Add a request without description[0m
+
+20 scenarios ([31m20 failed[0m)
+60 steps ([31m20 failed[0m, [36m40 skipped[0m)
+0m2.214s
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ [H[2J]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:seed
+[deprecated] I18n.enforce_available_locales will default to true in the future. If you really want to skip validation of your locale you can set I18n.enforce_available_locales = false to avoid this message.
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:seed[K[K[K[Kmigrate
+]0;aditya@ubuntu: ~/blue_booksaditya@ubuntu:~/blue_books$ rake db:migrate[3Pseedbundle exec cucumber
+Using the default profile...
+Feature: Manage Email Groups
+  
+  As an Administrator
+  I want to manage email groups
+  so that I can choose who is to be informed about certain updates.
+
+  Scenario: Add an email group[90m                                   # features/manage_email_groups.feature:7[0m
+    [31mGiven I'm on the email group creation page[90m                   # features/step_definitions/steps.rb:39[0m[0m
+[31m      Could not find table 'email_groups' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:40:in `/^I'm on the email group creation page$/'[0m
+[31m      features/manage_email_groups.feature:8:in `Given I'm on the email group creation page'[0m
+    [36mWhen I add a new email group[90m                                 # features/step_definitions/steps.rb:43[0m[0m
+    [36mThen I should see the confirmation of email group's creation[90m # features/step_definitions/steps.rb:48[0m[0m
+
+  Scenario: Add an email address[90m                                   # features/manage_email_groups.feature:12[0m
+    [31mGiven I'm on the email address addition page[90m                   # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:13:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address[90m                                 # features/step_definitions/steps.rb:56[0m[0m
+    [36mThen I should see the confirmation of email address's creation[90m # features/step_definitions/steps.rb:62[0m[0m
+
+  Scenario: Add an email group without name[90m    # features/manage_email_groups.feature:17[0m
+    [31mGiven I'm on the email group creation page[90m # features/step_definitions/steps.rb:39[0m[0m
+[31m      Could not find table 'email_groups' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_groups_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:40:in `/^I'm on the email group creation page$/'[0m
+[31m      features/manage_email_groups.feature:18:in `Given I'm on the email group creation page'[0m
+    [36mWhen I add a new email group with no name[90m  # features/step_definitions/steps.rb:66[0m[0m
+    [36mThen I should see errors on the page[90m       # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address without name[90m    # features/manage_email_groups.feature:22[0m
+    [31mGiven I'm on the email address addition page[90m # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:23:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address with no name[90m  # features/step_definitions/steps.rb:70[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address without email group[90m   # features/manage_email_groups.feature:27[0m
+    [31mGiven I'm on the email address addition page[90m       # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:28:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address with no email group[90m # features/step_definitions/steps.rb:74[0m[0m
+    [36mThen I should see errors on the page[90m               # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add an email address which does not satisfy "local-part@domain" syntax[90m # features/manage_email_groups.feature:32[0m
+    [31mGiven I'm on the email address addition page[90m                                   # features/step_definitions/steps.rb:52[0m[0m
+[31m      Could not find table 'email_addresses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/email_addresses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:53:in `/^I'm on the email address addition page$/'[0m
+[31m      features/manage_email_groups.feature:33:in `Given I'm on the email address addition page'[0m
+    [36mWhen I add a new email address in incorrect format[90m                             # features/step_definitions/steps.rb:79[0m[0m
+    [36mThen I should see errors on the page[90m                                           # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Manage Members
+  
+  As an Administrator
+  I want to manage members
+  so that I can keep a record of the members' information
+
+  Scenario: Add an member[90m                                     # features/manage_members.feature:7[0m
+    [31mGiven I'm on the member creation page[90m                     # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:8:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member[90m                                   # features/step_definitions/steps.rb:121[0m[0m
+    [36mThen I should see the confirmation of a member's creation[90m # features/step_definitions/steps.rb:130[0m[0m
+
+  Scenario: Add a member without first name[90m    # features/manage_members.feature:12[0m
+    [31mGiven I'm on the member creation page[90m      # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:13:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no first name[90m # features/step_definitions/steps.rb:134[0m[0m
+    [36mThen I should see errors on the page[90m       # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without last name[90m    # features/manage_members.feature:17[0m
+    [31mGiven I'm on the member creation page[90m     # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:18:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no last name[90m # features/step_definitions/steps.rb:138[0m[0m
+    [36mThen I should see errors on the page[90m      # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without pennkey[90m    # features/manage_members.feature:22[0m
+    [31mGiven I'm on the member creation page[90m   # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:23:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no pennkey[90m # features/step_definitions/steps.rb:142[0m[0m
+    [36mThen I should see errors on the page[90m    # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without school[90m    # features/manage_members.feature:27[0m
+    [31mGiven I'm on the member creation page[90m  # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:28:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no school[90m # features/step_definitions/steps.rb:146[0m[0m
+    [36mThen I should see errors on the page[90m   # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a member without name[90m     # features/manage_members.feature:32[0m
+    [31mGiven I'm on the member creation page[90m # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:33:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with no name[90m  # features/step_definitions/steps.rb:150[0m[0m
+    [36mThen I should see errors on the page[90m  # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing pennkey[90m               # features/manage_members.feature:37[0m
+    [31mGiven I'm on the member creation page[90m            # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:38:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with a duplicate pennkey[90m # features/step_definitions/steps.rb:154[0m[0m
+    [36mThen I should see errors on the page[90m             # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing email address[90m               # features/manage_members.feature:42[0m
+    [31mGiven I'm on the member creation page[90m                  # features/step_definitions/steps.rb:117[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:118:in `/^I'm on the member creation page$/'[0m
+[31m      features/manage_members.feature:43:in `Given I'm on the member creation page'[0m
+    [36mWhen I add a new member with a duplicate email address[90m # features/step_definitions/steps.rb:158[0m[0m
+    [36mThen I should see errors on the page[90m                   # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Manage Schools
+  
+  As an Administrator
+  I want to manage schools
+  so that I can categorize users based on the schools that they are affiliated with.
+
+  Scenario: Add an school[90m                                   # features/manage_schools.feature:7[0m
+    [31mGiven I'm on the school creation page[90m                   # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:8:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school[90m                                 # features/step_definitions/steps.rb:94[0m[0m
+    [36mThen I should see the confirmation of school's creation[90m # features/step_definitions/steps.rb:99[0m[0m
+
+  Scenario: Add a school without name[90m     # features/manage_schools.feature:12[0m
+    [31mGiven I'm on the school creation page[90m # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:13:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school with no name[90m  # features/step_definitions/steps.rb:103[0m[0m
+    [36mThen I should see errors on the page[90m  # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a pre-existing school[90m            # features/manage_schools.feature:17[0m
+    [31mGiven I'm on the school creation page[90m        # features/step_definitions/steps.rb:90[0m[0m
+[31m      Could not find table 'schools' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/schools_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:91:in `/^I'm on the school creation page$/'[0m
+[31m      features/manage_schools.feature:18:in `Given I'm on the school creation page'[0m
+    [36mWhen I add a new school which already exists[90m # features/step_definitions/steps.rb:107[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+Feature: Request Access
+  
+  As a User
+  I want to request the administrator for a higher access privilege
+  so that I can view/modify the documents which I am not allowed to see or update.
+
+  Scenario: Add a request[90m                            # features/request_access.feature:7[0m
+    [31mGiven I'm on the request submission page[90m         # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:8:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request[90m                         # features/step_definitions/steps.rb:6[0m[0m
+    [36mThen I should see the confirmation of email sent[90m # features/step_definitions/steps.rb:12[0m[0m
+
+  Scenario: Add a request without subject[90m    # features/request_access.feature:12[0m
+    [31mGiven I'm on the request submission page[90m # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:13:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request with no subject[90m # features/step_definitions/steps.rb:16[0m[0m
+    [36mThen I should see errors on the page[90m     # features/step_definitions/steps.rb:21[0m[0m
+
+  Scenario: Add a request without description[90m    # features/request_access.feature:17[0m
+    [31mGiven I'm on the request submission page[90m     # features/step_definitions/steps.rb:2[0m[0m
+[31m      Could not find table 'request_accesses' (ActiveRecord::StatementInvalid)[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./app/controllers/request_accesses_controller.rb:27:in `new'[0m
+[31m      ./features/step_definitions/steps.rb:3:in `/^I'm on the request submission page$/'[0m
+[31m      features/request_access.feature:18:in `Given I'm on the request submission page'[0m
+    [36mWhen I add a new request with no description[90m # features/step_definitions/steps.rb:25[0m[0m
+    [36mThen I should see errors on the page[90m         # features/step_definitions/steps.rb:21[0m[0m
+
+[31mFailing Scenarios:[0m
+[31mcucumber features/manage_email_groups.feature:7[0m[90m # Scenario: Add an email group[0m
+[31mcucumber features/manage_email_groups.feature:12[0m[90m # Scenario: Add an email address[0m
+[31mcucumber features/manage_email_groups.feature:17[0m[90m # Scenario: Add an email group without name[0m
+[31mcucumber features/manage_email_groups.feature:22[0m[90m # Scenario: Add an email address without name[0m
+[31mcucumber features/manage_email_groups.feature:27[0m[90m # Scenario: Add an email address without email group[0m
+[31mcucumber features/manage_email_groups.feature:32[0m[90m #

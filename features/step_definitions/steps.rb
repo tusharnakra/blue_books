@@ -55,7 +55,7 @@ end
 
 When(/^I add a new email address$/) do
   fill_in 'Name', :with => "abc@domain.xyz"
-  #select('Email group 1', :from => "Email group")
+  select('Email group 1', :from => "Email group")
   click_button 'Create Email address'
 end
 
@@ -80,4 +80,81 @@ When(/^I add a new email address in incorrect format$/) do
   fill_in 'Name', :with => "abc@domain"
   click_button 'Create Email address'
   #pending # express the regexp above with the code you wish you had
+end
+
+
+
+# ###################################Feature : Manage Schools ######################################
+
+
+Given(/^I'm on the school creation page$/) do
+  visit eval("new_school_path")
+end
+
+When(/^I add a new school$/) do
+  fill_in 'Name', :with => "SEAS"
+  click_button 'Create School'
+end
+
+Then(/^I should see the confirmation of school's creation$/) do
+  assert page.has_content?("School was successfully created.")
+end
+
+When(/^I add a new school with no name$/) do
+  click_button 'Create School'
+end
+
+When(/^I add a new school which already exists$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+
+
+
+###################################Feature : Manage Members ######################################
+
+
+Given(/^I'm on the member creation page$/) do
+  visit eval("new_school_path")
+end
+
+When(/^I add a new member$/) do
+  fill_in 'Pennkey', :with => "adit"
+  fill_in 'First name', :with => "addition"
+  fill_in 'Last name', :with => "subtraction"
+  fill_in 'Email address', :with => "adit"
+  select('SEAS', :from => "School")
+  click_button 'Create School'
+end
+
+Then(/^I should see the confirmation of a member's creation$/) do
+  assert page.has_content?("Member was successfully created.")
+end
+
+When(/^I add a new member with no first name$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I add a new member with no last name$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I add a new member with no pennkey$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I add a new member with no school$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I add a new member with no name$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I add a new member with a duplicate pennkey$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I add a new member with a duplicate email address$/) do
+  pending # express the regexp above with the code you wish you had
 end

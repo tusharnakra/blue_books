@@ -1,4 +1,10 @@
 BlueBooks::Application.routes.draw do
+  resources :schools
+
+
+  resources :members
+  get 'search' => "members#search"
+
   resources :email_addresses
 
 
@@ -7,7 +13,7 @@ BlueBooks::Application.routes.draw do
 
   resources :request_accesses
 
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
