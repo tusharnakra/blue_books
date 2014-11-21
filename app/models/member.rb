@@ -16,7 +16,8 @@ class Member < ActiveRecord::Base
   attr_accessible :email_address, :first_name, :last_name, :pennkey, :school_id
   belongs_to :school
 
-  validates_uniqueness_of :pennkey, :email_address
+  validates_uniqueness_of :email_address, message: 'already exists' 
+  validates_uniqueness_of :pennkey, message: 'already exists'
   validates :email_address, presence: {message: ' cannot be empty'}
   validates :first_name, presence: {message: ' cannot be empty'}
   validates :last_name, presence: {message: ' cannot be empty'}

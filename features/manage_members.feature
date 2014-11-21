@@ -24,14 +24,9 @@ Feature: Manage Members
 		When I add a new member with no pennkey
 		Then I should see errors on the page
 
-	Scenario: Add a member without school
+	Scenario: Add a member without email address
 		Given I'm on the member creation page
-		When I add a new member with no school
-		Then I should see errors on the page
-
-	Scenario: Add a member without name
-		Given I'm on the member creation page
-		When I add a new member with no name
+		When I add a new member with no email address
 		Then I should see errors on the page				
 		
 	Scenario: Add a pre-existing pennkey

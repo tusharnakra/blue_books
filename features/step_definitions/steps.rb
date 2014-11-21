@@ -37,34 +37,36 @@ end
 
 
 Given(/^I'm on the email group creation page$/) do
-  visit eval("new_email_group_path")
+  visit eval("new_group_path")
 end
 
 When(/^I add a new email group$/) do
   fill_in 'Name', :with => "EmailGroup1"
-  click_button 'Create Email group'
+  click_button 'Create Group'
 end
 
 Then(/^I should see the confirmation of email group's creation$/) do
-  assert page.has_content?("Email group was successfully created.")
+  assert page.has_content?("Group was successfully created.")
 end
 
 Given(/^I'm on the email address addition page$/) do
+  EmailGroup.create(name: "Email Group 1")
   visit eval("new_email_address_path")
 end
 
 When(/^I add a new email address$/) do
+  
   fill_in 'Name', :with => "abc@domain.xyz"
-  select('Email group 1', :from => "Email group")
+  page.select('Email Group 1', :from => "Group")
   click_button 'Create Email address'
 end
 
 Then(/^I should see the confirmation of email address's creation$/) do
-  assert page.has_content?("Email group was successfully created.")
+  assert page.has_content?("Email address was successfully created.")
 end
 
 When(/^I add a new email group with no name$/) do
-  click_button 'Create Email group'
+  click_button 'Create Group'
 end
 
 When(/^I add a new email address with no name$/) do
@@ -88,11 +90,12 @@ end
 
 
 Given(/^I'm on the school creation page$/) do
+  School.create(name: "SEAS")
   visit eval("new_school_path")
 end
 
 When(/^I add a new school$/) do
-  fill_in 'Name', :with => "SEAS"
+  fill_in 'Name', :with => "SAS"
   click_button 'Create School'
 end
 
@@ -105,7 +108,10 @@ When(/^I add a new school with no name$/) do
 end
 
 When(/^I add a new school which already exists$/) do
-  pending # express the regexp above with the code you wish you had
+  
+  fill_in 'Name', :with => "SEAS"
+  click_button 'Create School'
+  #pending # express the regexp above with the code you wish you had
 end
 
 
@@ -115,16 +121,20 @@ end
 
 
 Given(/^I'm on the member creation page$/) do
-  visit eval("new_school_path")
+  school_1 = School.create(name: "SEAS")
+  Member.create(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id)
+  
+  visit eval("new_member_path")
 end
 
 When(/^I add a new member$/) do
+  
   fill_in 'Pennkey', :with => "adit"
   fill_in 'First name', :with => "addition"
   fill_in 'Last name', :with => "subtraction"
-  fill_in 'Email address', :with => "adit"
+  fill_in 'Email address', :with => "adit@seas.upenn.edu"
   select('SEAS', :from => "School")
-  click_button 'Create School'
+  click_button 'Create Member'
 end
 
 Then(/^I should see the confirmation of a member's creation$/) do
@@ -132,29 +142,64 @@ Then(/^I should see the confirmation of a member's creation$/) do
 end
 
 When(/^I add a new member with no first name$/) do
-  pending # express the regexp above with the code you wish you had
+  #pending # express the regexp above with the code you wish you had
+  
+  fill_in 'Pennkey', :with => "adit"
+  fill_in 'Last name', :with => "subtraction"
+  fill_in 'Email address', :with => "adit@seas.upenn.edu"
+  select('SEAS', :from => "School")
+  click_button 'Create Member'
 end
 
 When(/^I add a new member with no last name$/) do
-  pending # express the regexp above with the code you wish you had
+  #pending # express the regexp above with the code you wish you had
+  
+  fill_in 'Pennkey', :with => "adit"
+  fill_in 'First name', :with => "addition"
+  fill_in 'Email address', :with => "adit@seas.upenn.edu"
+  select('SEAS', :from => "School")
+  click_button 'Create Member'
 end
 
 When(/^I add a new member with no pennkey$/) do
-  pending # express the regexp above with the code you wish you had
+  #pending # express the regexp above with the code you wish you had
+  
+  fill_in 'First name', :with => "addition"
+  fill_in 'Last name', :with => "subtraction"
+  fill_in 'Email address', :with => "adit@seas.upenn.edu"
+  select('SEAS', :from => "School")
+  click_button 'Create Member'
 end
 
-When(/^I add a new member with no school$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I add a new member with no name$/) do
-  pending # express the regexp above with the code you wish you had
+When(/^I add a new member with no email address$/) do
+  #pending # express the regexp above with the code you wish you had
+  
+  fill_in 'Pennkey', :with => "adit"
+  fill_in 'First name', :with => "addition"
+  fill_in 'Last name', :with => "subtraction"
+  select('SEAS', :from => "School")
+  click_button 'Create Member'
 end
 
 When(/^I add a new member with a duplicate pennkey$/) do
-  pending # express the regexp above with the code you wish you had
+  #pending # express the regexp above with the code you wish you had
+  
+  
+  fill_in 'Pennkey', :with => "tusharn"
+  fill_in 'First name', :with => "addition"
+  fill_in 'Last name', :with => "subtraction"
+  fill_in 'Email address', :with => "adit@seas.upenn.edu"
+  select('SEAS', :from => "School")
+  click_button 'Create Member'
 end
 
 When(/^I add a new member with a duplicate email address$/) do
-  pending # express the regexp above with the code you wish you had
+  #pending # express the regexp above with the code you wish you had
+  
+  fill_in 'Pennkey', :with => "nt"
+  fill_in 'First name', :with => "addition"
+  fill_in 'Last name', :with => "subtraction"
+  fill_in 'Email address', :with => "ntushar@seas.upenn.edu"
+  select('SEAS', :from => "School")
+  click_button 'Create Member'
 end
