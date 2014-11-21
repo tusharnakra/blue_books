@@ -18,9 +18,9 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :email_group_id, :class => 'control-label' %>
+    <%= f.label :group_id, :class => 'control-label' %>
     <div class="controls">
-	  <%= collection_select :email_address, :email_group_id, EmailGroup.all, :id, :name%>
+	  <%= collection_select :email_address, :group_id, Group.all, :id, :name%>
     </div>
   </div>
 

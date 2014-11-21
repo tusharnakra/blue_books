@@ -33,20 +33,20 @@ end
 
 
 
-###################################Feature : Manage Email Groups ######################################
+###################################Feature : Manage Groups ######################################
 
 
 Given(/^I'm on the email group creation page$/) do
-  visit eval("new_email_group_path")
+  visit eval("new_group_path")
 end
 
 When(/^I add a new email group$/) do
   fill_in 'Name', :with => "EmailGroup1"
-  click_button 'Create Email group'
+  click_button 'Create Group'
 end
 
 Then(/^I should see the confirmation of email group's creation$/) do
-  assert page.has_content?("Email group was successfully created.")
+  assert page.has_content?("Group was successfully created.")
 end
 
 Given(/^I'm on the email address addition page$/) do
@@ -55,16 +55,16 @@ end
 
 When(/^I add a new email address$/) do
   fill_in 'Name', :with => "abc@domain.xyz"
-  select('Email group 1', :from => "Email group")
+  select('Email group 1', :from => "Group")
   click_button 'Create Email address'
 end
 
 Then(/^I should see the confirmation of email address's creation$/) do
-  assert page.has_content?("Email group was successfully created.")
+  assert page.has_content?("Email address was successfully created.")
 end
 
 When(/^I add a new email group with no name$/) do
-  click_button 'Create Email group'
+  click_button 'Create Group'
 end
 
 When(/^I add a new email address with no name$/) do
