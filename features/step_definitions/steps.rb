@@ -50,7 +50,7 @@ Then(/^I should see the confirmation of email group's creation$/) do
 end
 
 Given(/^I'm on the email address addition page$/) do
-  EmailGroup.create(name: "Email Group 1")
+  Group.create(name: "Email Group 1")
   visit eval("new_email_address_path")
 end
 
@@ -58,7 +58,7 @@ When(/^I add a new email address$/) do
   
   fill_in 'Name', :with => "abc@domain.xyz"
 
-  select('Email group 1', :from => "Group")
+  select('Email Group 1', :from => "Group")
   click_button 'Create Email address'
 end
 
@@ -74,10 +74,6 @@ When(/^I add a new email address with no name$/) do
   click_button 'Create Email address'
 end
 
-When(/^I add a new email address with no email group$/) do
-  fill_in 'Name', :with => "abc@domain.xyz"
-  click_button 'Create Email address'
-end
 
 When(/^I add a new email address in incorrect format$/) do
   fill_in 'Name', :with => "abc@domain"
