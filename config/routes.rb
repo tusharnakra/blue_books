@@ -1,4 +1,7 @@
 BlueBooks::Application.routes.draw do
+  resources :documents
+
+
   resources :groups
 
 

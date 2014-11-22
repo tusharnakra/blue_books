@@ -18,7 +18,7 @@ class Member < ActiveRecord::Base
 
   validates_uniqueness_of :email_address, message: 'already exists' 
   validates_uniqueness_of :pennkey, message: 'already exists'
-  validates :email_address, presence: {message: ' cannot be empty'}
+  validates :email_address, :email => true, presence: {message: ' cannot be empty'}
   validates :first_name, presence: {message: ' cannot be empty'}
   validates :last_name, presence: {message: ' cannot be empty'}
   validates :pennkey, presence: {message: ' cannot be empty'}
