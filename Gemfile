@@ -13,6 +13,10 @@ gem 'less-rails'
 gem 'mail'
 gem 'annotate'
 
+gem 'devise'
+gem 'cancan'
+gem 'role_model'
+
 group :test, :development do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'

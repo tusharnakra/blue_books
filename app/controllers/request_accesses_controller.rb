@@ -44,6 +44,7 @@ class RequestAccessesController < ApplicationController
 
     respond_to do |format|
       if @request_access.save
+        UserMailer.send_request(@request_access)
         format.html { redirect_to @request_access, notice: 'Request was successfully sent.' }
         format.json { render json: @request_access, status: :created, location: @request_access }
       else
