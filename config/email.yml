@@ -1,0 +1,16 @@
+development:
+  :address: smtp.gmail.com
+  :port: 587
+  :authentication: plain
+  :domain: "gmail.com"
+  :user_name: shallav.varma
+  :password: ""
+  :enable_starttls_auto: true
+production:
+  :address: smtp.gmail.com
+  :port: 587
+  :authentication: plain
+  :domain: "gmail.com"
+  :user_name: shallav.varma
+  :password: ""
+  :enable_starttls_auto: true

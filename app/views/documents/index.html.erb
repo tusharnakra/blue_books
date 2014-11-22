@@ -15,7 +15,7 @@
     <% @documents.each do |document| %>
       <tr>
         <td><%= link_to document.id, document_path(document) %></td>
-        <td><%= link_to document.document_name, asset_path("Levine_SEAS.pdf"), :class => "links" %></td>
+        <td><%= link_to document.document_name, asset_path("Levine_SEAS.pdf") %></td>
         <td><%=l document.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
