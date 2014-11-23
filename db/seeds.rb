@@ -36,6 +36,6 @@ Member.create(email_address: "anil@wharton.upenn.edu", first_name: "Anil", last_
 Member.create(email_address: "albert@sas.upenn.edu", first_name: "Albert", last_name: "Einstein" , pennkey: "albert", school_id: school_3.id)
 Member.create(email_address: "steve@wharton.upenn.edu", first_name: "Steve", last_name: "Jobs" , pennkey: "steve", school_id: school_2.id)
 
-Document.create(document_name: "Blue Book - SEAS")
-Document.create(document_name: "Blue Book - Wharton")
-Document.create(document_name: "Blue Book - SAS")
+Document.create(document_name: "Towne")
+Document.create(document_name: "Levine")
+Document.create(document_name: "Moore")

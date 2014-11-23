@@ -15,7 +15,8 @@
     <% @documents.each do |document| %>
       <tr>
         <td><%= link_to document.id, document_path(document) %></td>
-        <td><%= link_to document.document_name, asset_path("Levine_SEAS.pdf"), :target => "_blank", :class => "links" %></td>
+		<% file = document.document_name + ".pdf"%>
+        <td><%= link_to document.document_name, asset_path(file), :target => "_blank", :class => "links" %></td>
         <td><%=l document.created_at %></td>
         <td>
 		  <%= link_to "Download", download_path %>
