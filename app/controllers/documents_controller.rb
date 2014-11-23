@@ -80,4 +80,9 @@ class DocumentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def download
+    send_file("#{Rails.root}/app/assets/Levine_SEAS.pdf")
+    #send_file assets_path("Levine_SEAS.pdf"), :type=>"application/pdf", :x_sendfile=>true
+  end
 end

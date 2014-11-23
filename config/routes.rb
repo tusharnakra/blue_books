@@ -1,7 +1,10 @@
 BlueBooks::Application.routes.draw do
+  
+  root :to => 'documents#index'
+  
   resources :documents
-
-
+  match '/download' => 'documents#download' # :as => 'download'
+ 
   resources :groups
 
 
