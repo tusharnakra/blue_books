@@ -82,7 +82,7 @@ class MembersController < ApplicationController
   end
 
   def search
-    members = Member.where("first_name LIKE ? OR last_name LIKE ? OR pennkey LIKE ? OR email_address LIKE ?", "%#{params[:search]}%","%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    @members = Member.where("first_name LIKE ? OR last_name LIKE ? OR pennkey LIKE ? OR email_address LIKE ?", "%#{params[:search]}%","%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")  
     render :template =>"members/index"
   end
 end

@@ -22,7 +22,9 @@
     </tr>
   </thead>
   <tbody>
-    <% @members.each do |member| %>
+    
+    <% unless @members.nil? %>
+     <% @members.each do |member| %>
       <tr>
         <td><%= link_to member.id, member_path(member) %></td>
         <td><%= member.pennkey %></td>
@@ -41,6 +43,7 @@
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
