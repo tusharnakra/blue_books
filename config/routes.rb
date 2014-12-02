@@ -1,5 +1,8 @@
 BlueBooks::Application.routes.draw do
   
+  resources :send_documents
+
+
   get "books/index"
 
   get "books/new"

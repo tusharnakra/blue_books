@@ -1,0 +1,26 @@
+<%- model_class = SendDocument -%>
+<div class="container">
+    <%= render :partial => 'navBar' %>
+    <% if !@send_document.errors.empty? %>
+      <div class="alert alert-error">
+        <ul>
+          <% @send_document.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+	
+	<div class="well">
+	  <%= form_for @send_document, html: { multipart: true } do |f| %>
+	    <%= f.label :subject %>
+	    <%= f.text_field :subject %>
+	    <%= f.label :description %>
+	    <%= f.text_area :description %>
+	    <%= f.label :attachment %>
+	    <%= f.file_field :attachment %>
+	    <%= f.submit "Save", class: "btn btn-primary" %>
+	  <% end %>
+	</div>
+	</div>
+</div>

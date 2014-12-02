@@ -1,0 +1,23 @@
+<%= form_for @send_document, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :subject, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :subject, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="well">
+    <%= form_for @send_document, html: { multipart: true } do |f| %>
+      <%= f.label :attachment %>
+      <%= f.file_field :attachment %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  send_documents_path, :class => 'btn' %>
+    <% end %>
+  </div>
+<% end %>
