@@ -11,23 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141122003146) do
+ActiveRecord::Schema.define(:version => 20141201222044) do
 
-  create_table "documents", :force => true do |t|
-    t.string   "document_name"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  create_table "email_addresses", :force => true do |t|
+  create_table "books", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "group_id"
-  end
-
-  create_table "email_groups", :force => true do |t|
-    t.string   "name"
+    t.string   "attachment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -46,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20141122003146) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "school_id"
+    t.integer  "group_id"
   end
 
   create_table "request_accesses", :force => true do |t|

@@ -13,8 +13,9 @@
 #
 
 class Member < ActiveRecord::Base
-  attr_accessible :email_address, :first_name, :last_name, :pennkey, :school_id
+  attr_accessible :email_address, :first_name, :last_name, :pennkey, :school_id, :group_id
   belongs_to :school
+  belongs_to :group
 
   validates_uniqueness_of :email_address, message: 'already exists' 
   validates_uniqueness_of :pennkey, message: 'already exists'

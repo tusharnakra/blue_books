@@ -1,0 +1,17 @@
+<%- model_class = Group -%>
+<div class="container">
+  <%= render :partial => 'navBar' %>
+  <h4><%= "Group: #{@group.name}" %></h4>
+  <table class="table table-striped">
+  <tbody>
+    <% @membersInGroup.each do |member| %>
+      <tr>
+        <td><%= member.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <%= link_to t('.back', :default => t("helpers.links.back")), groups_path, :class => 'btn'  %>
+
+  </div>
+</div>

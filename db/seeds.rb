@@ -16,26 +16,18 @@ email_group_1 = Group.create(name: "Email Group 1")
 email_group_2 = Group.create(name: "Email Group 2")
 
 
-EmailAddress.create(name: "ntushar@seas.upenn.edu", group_id: email_group_0.id)
-EmailAddress.create(name: "adid@seas.upenn.edu", group_id: email_group_0.id)
-EmailAddress.create(name: "shallav@seas.upenn.edu", group_id: email_group_0.id)
-EmailAddress.create(name: "shallav.varma@gmail.com", group_id: email_group_1.id)
-EmailAddress.create(name: "adid.desh@gmail.com", group_id: email_group_2.id)
-EmailAddress.create(name: "tusharnakra@hotmail.com", group_id: email_group_2.id)
-
-
 school_1 = School.create(name: "SEAS")
 school_2 = School.create(name: "Wharton")
 school_3 = School.create(name: "SAS")
 
 
-Member.create(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id)
-Member.create(email_address: "adid@seas.upenn.edu", first_name: "Aditya", last_name: "Deshpande" , pennkey: "adid", school_id: school_1.id)
-Member.create(email_address: "shallav@seas.upenn.edu", first_name: "Shallav", last_name: "Varma" , pennkey: "shallav", school_id: school_1.id)
-Member.create(email_address: "anil@wharton.upenn.edu", first_name: "Anil", last_name: "Ambani" , pennkey: "anil", school_id: school_2.id)
-Member.create(email_address: "albert@sas.upenn.edu", first_name: "Albert", last_name: "Einstein" , pennkey: "albert", school_id: school_3.id)
-Member.create(email_address: "steve@wharton.upenn.edu", first_name: "Steve", last_name: "Jobs" , pennkey: "steve", school_id: school_2.id)
+Member.create(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id, group_id: email_group_0.id)
+Member.create(email_address: "adid@seas.upenn.edu", first_name: "Aditya", last_name: "Deshpande" , pennkey: "adid", school_id: school_1.id, group_id: email_group_0.id)
+Member.create(email_address: "shallav@seas.upenn.edu", first_name: "Shallav", last_name: "Varma" , pennkey: "shallav", school_id: school_1.id, group_id: email_group_1.id)
+Member.create(email_address: "anil@wharton.upenn.edu", first_name: "Anil", last_name: "Ambani" , pennkey: "anil", school_id: school_2.id, group_id: email_group_1.id)
+Member.create(email_address: "albert@sas.upenn.edu", first_name: "Albert", last_name: "Einstein" , pennkey: "albert", school_id: school_3.id, group_id: email_group_2.id)
+Member.create(email_address: "steve@wharton.upenn.edu", first_name: "Steve", last_name: "Jobs" , pennkey: "steve", school_id: school_2.id, group_id: email_group_2.id)
 
-Document.create(document_name: "Towne")
-Document.create(document_name: "Levine")
-Document.create(document_name: "Moore")
+Book.create(name: "Homework 3", attachment: File.open(File.join(Rails.root,"public/app/assets/hw3.pdf")))
+Book.create(name: "Levine", attachment: File.open(File.join(Rails.root,"public/app/assets/Levine.pdf")))
+Book.create(name: "Towne",  attachment: File.open(File.join(Rails.root,"public/app/assets/Towne.pdf")))

@@ -1,7 +1,8 @@
 <%- model_class = School -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
+<div class="container">
+  <%= render :partial => 'navBar' %>
+    <h4><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h4>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -34,3 +35,5 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_school_path,
             :class => 'btn btn-primary' %>
+  </div>
+</div>

@@ -80,4 +80,11 @@ class GroupsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def showMembersInGroup
+    @group = Group.find(params[:id])
+
+    @membersInGroup = @group.members
+    print @membersInGroup
+  end
 end

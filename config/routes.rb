@@ -1,24 +1,40 @@
 BlueBooks::Application.routes.draw do
   
-  root :to => 'documents#index'
-  
-  resources :documents
-  match '/download' => 'documents#download' # :as => 'download'
+  get "books/index"
+
+  get "books/new"
+
+  get "books/create"
+
+  get "books/destroy"
+
+  #devise_for :users
+
+  #root :to => 'documents#index'
+  root :to => 'members#admin_home_page'
+
+  #match 'documents/show_pdf/:id' => 'documents#show_pdf', :as => 'show_pdf' 
+  #resources :documents
+  #match '/download/:id' => 'documents#download', :as => 'download'
  
+  match 'groups/showMembersInGroup/:id' => "groups#showMembersInGroup", :as => 'showMembersInGroup'
   resources :groups
 
 
   resources :schools
 
-
+  match 'members/admin_home_page' => "members#admin_home_page"
   resources :members
   get 'search' => "members#search"
-
-  resources :email_addresses
-
-
+  
+  
   resources :request_accesses
-
+  
+  # Added for carrierwave-aditya
+  match 'books/showBook_pdf/:id' => 'books#showBook_pdf', :as => 'showBook_pdf'
+  resources :books, only: [:index, :new, :create, :destroy]
+  get 'book_search' => "books#book_search"  
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

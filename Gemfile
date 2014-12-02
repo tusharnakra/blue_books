@@ -10,6 +10,9 @@ gem 'sqlite3'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 
+gem 'carrierwave', '~> 0.9'
+
+
 gem 'mail'
 gem 'annotate'
 

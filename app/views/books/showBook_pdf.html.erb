@@ -1,0 +1,16 @@
+<%- model_class = Book -%>
+<div class="container">
+  <%= render :partial => 'navBar' %>
+  <h4><%= @book.name %></h4>
+  <% file_name = @book.attachment  %>
+  <table>
+      <tr>
+        <td>
+          <iframe src=<%= asset_path(file_name) %> width="900" height="500" style="border: none;"> </iframe>
+        </td>
+        
+      </tr>
+  </table>
+
+</div>
+</div>

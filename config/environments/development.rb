@@ -50,5 +50,8 @@ BlueBooks::Application.configure do
 #     authentication:       'plain',
 #     enable_starttls_auto:  true  }
 
+# I added this -aditya - for the devise functionality - terminal said to do so
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+#config.assets.initialize_on_precompile = false
 end
 

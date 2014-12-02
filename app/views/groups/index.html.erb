@@ -1,7 +1,9 @@
 <%- model_class = Group -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
+<div class="container">
+  <%= render :partial => 'navBar' %>
+
+    <h4><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h4>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -15,7 +17,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= link_to group.id, group_path(group) %></td>
-        <td><%= group.name %></td>
+        <td><%= link_to group.name, showMembersInGroup_path(group) %></td>
         <td><%=l group.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -34,3 +36,5 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_group_path,
             :class => 'btn btn-primary' %>
+  </div>
+</div>
