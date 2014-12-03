@@ -5,7 +5,7 @@ gem 'rails', '3.2.19'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
@@ -26,6 +26,13 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'simplecov', :require => false
+end
+
+group :production do
+  gem 'pg'
 end
 
 # Gems used only for assets and not required
