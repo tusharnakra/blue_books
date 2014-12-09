@@ -35,5 +35,10 @@ class BooksController < ApplicationController
     @books = Book.where("name LIKE ? ", "%#{params[:book_search]}%")  
     render :template =>"books/index"
   end
+  
+  def download_book
+    book = Book.find(params[:id])
+    send_file("#{Rails.root}/public" + book.attachment_url)
+  end
 
 end

@@ -37,6 +37,7 @@ BlueBooks::Application.routes.draw do
   match 'books/showBook_pdf/:id' => 'books#showBook_pdf', :as => 'showBook_pdf'
   resources :books, only: [:index, :new, :create, :destroy]
   get 'book_search' => "books#book_search"  
+  match '/download_book/:id' => 'books#download_book', :as => 'download_book'
   
   
   # The priority is based upon order of creation:
