@@ -7,7 +7,7 @@ class UserMailer < ActionMailer::Base
     end
     
     Mail.deliver do
-      from    'shallav.varma@gmail.com'
+      from    'fileshare597@gmail.com'
       to      emails
       subject request_access.subject
       body    request_access.description
@@ -24,11 +24,11 @@ class UserMailer < ActionMailer::Base
     end
     
     Mail.deliver do
-      from    'shallav.varma@gmail.com'
+      from    'fileshare597@gmail.com'
       to      emails
       subject send_document.subject
-      body    send_document.description
       attachments.inline[File.basename(send_document.attachment.path)] = File.read(send_document.attachment.path)
+      body    send_document.description
     end
   end
   
