@@ -1,5 +1,7 @@
 BlueBooks::Application.routes.draw do
   
+  devise_for :members
+
   resources :send_documents
 
 

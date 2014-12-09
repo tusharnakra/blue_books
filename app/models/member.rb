@@ -13,7 +13,15 @@
 #
 
 class Member < ActiveRecord::Base
-  attr_accessible :email_address, :first_name, :last_name, :pennkey, :school_id, :group_id
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  attr_accessible :email_address, :first_name, :last_name, :pennkey, :school_id, :group_id, 
+  :email, :password, :password_confirmation, :sign_in_count, :current_sign_in_at, :last_sign_in_at, 
+  :remember_me, :current_sign_in_ip, :last_sign_in_ip 
+
   belongs_to :school
   belongs_to :group
 
