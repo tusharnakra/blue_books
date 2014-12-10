@@ -25,7 +25,7 @@ BlueBooks::Application.routes.draw do
   match 'groups/showMembersInGroup/:id' => "groups#showMembersInGroup", :as => 'showMembersInGroup'
   resources :groups
 
-
+  match 'schools/show_members_in_school/:id' => "schools#show_members_in_school", :as => 'show_members_in_school'
   resources :schools
 
   match 'members/admin_home_page' => "members#admin_home_page"

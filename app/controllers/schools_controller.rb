@@ -80,4 +80,11 @@ class SchoolsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def show_members_in_school
+    @school = School.find(params[:id])
+
+    @membersInSchool = @school.members
+    
+  end
 end

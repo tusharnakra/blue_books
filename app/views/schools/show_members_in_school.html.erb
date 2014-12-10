@@ -1,0 +1,29 @@
+<%- model_class = School -%>
+
+  <h4><%= "School: #{@school.name}" %></h4>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th><%= model_class.human_attribute_name(:first_name) %></th>
+          <th><%= model_class.human_attribute_name(:last_name) %></th>
+          <th><%= model_class.human_attribute_name(:pennkey) %></th>
+          <th><%= model_class.human_attribute_name(:email_address) %></th>
+          <th><%= model_class.human_attribute_name(:group_id) %></th>
+        </tr>
+      </thead>
+  <tbody>
+    <% @membersInSchool.each do |member| %>
+      <tr>
+        <td><%= member.first_name %></td>
+        <td><%= member.last_name %></td>
+        <td><%= member.pennkey %></td>
+        <td><%= member.email_address %></td>
+        <td><%= member.group.name unless member.group.nil?%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <%= link_to t('.back', :default => t("helpers.links.back")), schools_path, :class => 'btn'  %>
+
+  </div>
+</div>
