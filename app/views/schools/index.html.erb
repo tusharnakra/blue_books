@@ -1,6 +1,5 @@
 <%- model_class = School -%>
-<div class="container">
-  <%= render :partial => 'navBar' %>
+
     <h4><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h4>
 
 <table class="table table-striped">
@@ -16,7 +15,7 @@
     <% @schools.each do |school| %>
       <tr>
         <td><%= link_to school.id, school_path(school) %></td>
-        <td><%= school.name %></td>
+        <td><%= link_to school.name, show_members_in_school_path(school) %></td>
         <td><%=l school.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

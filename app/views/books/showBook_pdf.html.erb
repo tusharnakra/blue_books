@@ -1,8 +1,11 @@
 <%- model_class = Book -%>
-<div class="container">
-  <%= render :partial => 'navBar' %>
+
   <h4><%= @book.name %></h4>
   <% file_name = @book.attachment  %>
+  <div style="vertical-align:top">
+	  <%= link_to "Download", download_book_path(@book), :class => "btn btn-default"%>
+	  <%= link_to t('.back', :default => t("helpers.links.back")), books_path, :class => 'btn' %>
+  </div>
   <table>
       <tr>
         <td>

@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+<p class="navbar-text pull-right">
+<% if member_signed_in? %>
+  Logged in as <strong><%= current_member.email %></strong>.
+  <%= link_to 'Edit profile', edit_member_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_member_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_member_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_member_session_path, :class => 'navbar-link'  %>
+<% end %>
 
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -14,7 +24,37 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-
+<div class="container">
+<div class="page-header">
+    <%-#t '.title', :default => model_class.model_name.human.pluralize.titleize -%>
+    <h1 style="color: #577492"> Blue Books </h1>
+  </div>
+  <div class="col-xs-3">
+    
+  </div>
+  <div class="col-xs-9">
+    <div class="navbar navbar-default navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Home",members_admin_home_page_path %></li>
+              <li><%= link_to "Books", books_path %></li>
+              <li><%= link_to "Members", members_path %></li>
+              <li><%= link_to "Schools", schools_path %></li>
+              
+              <li><%= link_to "Request Access", new_request_access_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 <%= yield %>
 
 </body>

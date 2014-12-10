@@ -1,8 +1,5 @@
 <%- model_class = Member -%>
 
-<div class="container">
-  <%= render :partial => 'navBar' %>
-
 
     <%= form_tag search_path, :method => 'get' do %>
     
@@ -33,6 +30,7 @@
       <tr>
         <td>
           <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
+          <%= link_to t('.back', :default => t("helpers.links.back")), members_admin_home_page_path, :class => 'btn' %>
         </td>
       </tr>
       

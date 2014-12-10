@@ -1,5 +1,7 @@
 BlueBooks::Application.routes.draw do
   
+  devise_for :members
+
   resources :send_documents
 
 
@@ -23,7 +25,7 @@ BlueBooks::Application.routes.draw do
   match 'groups/showMembersInGroup/:id' => "groups#showMembersInGroup", :as => 'showMembersInGroup'
   resources :groups
 
-
+  match 'schools/show_members_in_school/:id' => "schools#show_members_in_school", :as => 'show_members_in_school'
   resources :schools
 
   match 'members/admin_home_page' => "members#admin_home_page"
@@ -37,6 +39,7 @@ BlueBooks::Application.routes.draw do
   match 'books/showBook_pdf/:id' => 'books#showBook_pdf', :as => 'showBook_pdf'
   resources :books, only: [:index, :new, :create, :destroy]
   get 'book_search' => "books#book_search"  
+  match '/download_book/:id' => 'books#download_book', :as => 'download_book'
   
   
   # The priority is based upon order of creation:
