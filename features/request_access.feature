@@ -4,9 +4,11 @@ Feature: Request Access
 	I want to request the administrator for a higher access privilege
 	so that I can view/modify the documents which I am not allowed to see or update.
 	
+	
 	Scenario: Add a request
-		Given I'm on the request submission page
-		When I add a new request
+	    Given I'm on the request submission page
+	    When I add a new request
+		And "fileshare597@gmail.com" should receive an email
 		Then I should see the confirmation of email sent
 		 
 	Scenario: Add a request without subject

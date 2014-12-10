@@ -6,8 +6,12 @@ end
 When(/^I add a new request$/) do
   fill_in 'Subject', :with => "Levine Hall Bluebook write access"
   fill_in 'Description', :with => "I am the supervisor of Levine hall and would like to request write access to Levine hall's bluebook."
+  email_group_0 = Group.create(name: "Admin")
+  school_1 = School.create(name: "SEAS")
+  Member.create(email_address: "fileshare597@gmail.com", first_name: "File", last_name: "Share" , pennkey: "test", school_id: school_1, group_id: email_group_0.id)
   click_button 'Create Request access'
 end
+
 
 Then(/^I should see the confirmation of email sent$/) do
   assert page.has_content?("Request was successfully sent.")
@@ -27,12 +31,6 @@ When(/^I add a new request with no description$/) do
   click_button 'Create Request access'
 end
 
-
-
-
-
-
-
 ###################################Feature : Manage Groups ######################################
 
 
@@ -49,39 +47,10 @@ Then(/^I should see the confirmation of email group's creation$/) do
   assert page.has_content?("Group was successfully created.")
 end
 
-Given(/^I'm on the email address addition page$/) do
-  Group.create(name: "Email Group 1")
-  visit eval("new_email_address_path")
-end
-
-When(/^I add a new email address$/) do
-  
-  fill_in 'Name', :with => "abc@domain.xyz"
-
-  select('Email Group 1', :from => "Group")
-  click_button 'Create Email address'
-end
-
-Then(/^I should see the confirmation of email address's creation$/) do
-  assert page.has_content?("Email address was successfully created.")
-end
 
 When(/^I add a new email group with no name$/) do
   click_button 'Create Group'
 end
-
-When(/^I add a new email address with no name$/) do
-  click_button 'Create Email address'
-end
-
-
-When(/^I add a new email address in incorrect format$/) do
-  fill_in 'Name', :with => "abc@domain"
-  click_button 'Create Email address'
-  #pending # express the regexp above with the code you wish you had
-end
-
-
 
 # ###################################Feature : Manage Schools ######################################
 
@@ -105,10 +74,9 @@ When(/^I add a new school with no name$/) do
 end
 
 When(/^I add a new school which already exists$/) do
-  
+
   fill_in 'Name', :with => "SEAS"
   click_button 'Create School'
-  #pending # express the regexp above with the code you wish you had
 end
 
 
@@ -120,12 +88,12 @@ end
 Given(/^I'm on the member creation page$/) do
   school_1 = School.create(name: "SEAS")
   Member.create(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id)
-  
+
   visit eval("new_member_path")
 end
 
 When(/^I add a new member$/) do
-  
+
   fill_in 'Pennkey', :with => "adit"
   fill_in 'First name', :with => "addition"
   fill_in 'Last name', :with => "subtraction"
@@ -140,7 +108,7 @@ end
 
 When(/^I add a new member with no first name$/) do
   #pending # express the regexp above with the code you wish you had
-  
+
   fill_in 'Pennkey', :with => "adit"
   fill_in 'Last name', :with => "subtraction"
   fill_in 'Email address', :with => "adit@seas.upenn.edu"
@@ -150,7 +118,7 @@ end
 
 When(/^I add a new member with no last name$/) do
   #pending # express the regexp above with the code you wish you had
-  
+
   fill_in 'Pennkey', :with => "adit"
   fill_in 'First name', :with => "addition"
   fill_in 'Email address', :with => "adit@seas.upenn.edu"
@@ -160,7 +128,7 @@ end
 
 When(/^I add a new member with no pennkey$/) do
   #pending # express the regexp above with the code you wish you had
-  
+
   fill_in 'First name', :with => "addition"
   fill_in 'Last name', :with => "subtraction"
   fill_in 'Email address', :with => "adit@seas.upenn.edu"
@@ -170,7 +138,7 @@ end
 
 When(/^I add a new member with no email address$/) do
   #pending # express the regexp above with the code you wish you had
-  
+
   fill_in 'Pennkey', :with => "adit"
   fill_in 'First name', :with => "addition"
   fill_in 'Last name', :with => "subtraction"
@@ -180,8 +148,8 @@ end
 
 When(/^I add a new member with a duplicate pennkey$/) do
   #pending # express the regexp above with the code you wish you had
-  
-  
+
+
   fill_in 'Pennkey', :with => "tusharn"
   fill_in 'First name', :with => "addition"
   fill_in 'Last name', :with => "subtraction"
@@ -192,7 +160,7 @@ end
 
 When(/^I add a new member with a duplicate email address$/) do
   #pending # express the regexp above with the code you wish you had
-  
+
   fill_in 'Pennkey', :with => "nt"
   fill_in 'First name', :with => "addition"
   fill_in 'Last name', :with => "subtraction"
