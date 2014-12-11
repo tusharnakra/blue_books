@@ -29,6 +29,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'simplecov', :require => false
+  gem 'email_spec', :require => false
 end
 
 group :production do
