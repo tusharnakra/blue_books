@@ -40,7 +40,9 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.json
   def create
+    p "**********************"
     @member = Member.new(params[:member])
+
 
     respond_to do |format|
       if @member.save

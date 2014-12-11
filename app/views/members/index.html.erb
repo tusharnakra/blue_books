@@ -1,29 +1,28 @@
 <%- model_class = Member -%>
-
-
+    <%= render :partial => 'navBar' %>
+    
     <%= form_tag search_path, :method => 'get' do %>
     
     <table>
       <tr>
         <td>
         <h6> Search for an existing member</h6>
-        <hr>
+        
       </td>
       </tr>
       <tr>
-        <td><%= model_class.human_attribute_name(:first_name) %><br>
+        <td style="padding-right:10px"><%= model_class.human_attribute_name(:first_name) %><br>
             <%= text_field_tag :fnsearch, params[:fnsearch]%>
         </td>
-        <td><%= model_class.human_attribute_name(:last_name) %><br>
+        <td style="padding-right:10px"><%= model_class.human_attribute_name(:last_name) %><br>
             <%= text_field_tag :lnsearch, params[:lnsearch]%>
         </td>
         
-      </tr>
-      <tr>
-        <td><%= model_class.human_attribute_name(:pennkey) %><br>
+      
+        <td style="padding-right:10px"><%= model_class.human_attribute_name(:pennkey) %><br>
             <%= text_field_tag :pksearch, params[:pksearch]%>
         </td>    
-        <td><%= model_class.human_attribute_name(:email_address) %><br>
+        <td style="padding-right:10px"><%= model_class.human_attribute_name(:email_address) %><br>
             <%= text_field_tag :easearch, params[:easearch]%>
         </td>
       </tr>
@@ -79,6 +78,7 @@
       </tbody>
     </table>
 
-    
+ 
+  </div>  
   </div>
 </div>

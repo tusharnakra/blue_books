@@ -1,6 +1,7 @@
 <%- model_class = Member -%>
-
+		<%= render :partial => 'navBar' %>
 	    <h4><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h4>
 		<%= render :partial => 'form' %>
+
 	</div>
 </div>
