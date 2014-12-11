@@ -1,5 +1,86 @@
+### UTILITY METHODS ###
+
+def create_visitor
+  @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
+    :password => "changeme", :password_confirmation => "changeme" }
+end
+
+def create_user
+  create_visitor
+  delete_user
+  school_1 = School.create(name: "SEAS")
+  email_group_1 = Group.create(name: "Email Group 1")
+  @user = Member.create!(email_address: @visitor[:email], first_name: "Testy", last_name: "McUserton" , pennkey: "tesla", school_id: school_1.id, group_id: email_group_1.id, email: @visitor[:email], password: @visitor[:password], password_confirmation: @visitor[:password_confirmation])
+end
+
+def delete_user
+  @user ||= Member.where(:email => @visitor[:email]).first
+  @user.destroy unless @user.nil?
+end
+
+def sign_in
+  visit '/members/sign_in'
+  fill_in "member_email", :with => @visitor[:email]
+  fill_in "member_password", :with => @visitor[:password]
+  click_button "Sign in"
+end
+
+Given /^I exist as a user$/ do
+  create_user
+end
+
+Given /^I do not exist as a user$/ do
+  create_visitor
+  delete_user
+end
+
+Given /^I am not logged in$/ do
+  visit '/members/sign_out'
+end
+
+When /^I sign in with valid credentials$/ do
+  create_visitor
+  sign_in
+end
+
+Then /^I see an invalid login message$/ do
+  page.should have_content "Invalid email or password."
+end
+
+Then /^I should be signed out$/ do
+  page.should have_content "Sign up"
+  page.should have_content "Login"
+  page.should_not have_content "Logout"
+end
+
+Then /^I see a successful sign in message$/ do
+  page.should have_content "Signed in successfully."
+end
+
+When /^I return to the site$/ do
+  visit '/'
+end
+
+Then /^I should be signed in$/ do
+  page.should have_content "Logout"
+  page.should_not have_content "Sign up"
+  page.should_not have_content "Login"
+end
+
+When /^I sign in with a wrong email$/ do
+  @visitor = @visitor.merge(:email => "wrong@example.com")
+  sign_in
+end
+
+When /^I sign in with a wrong password$/ do
+  @visitor = @visitor.merge(:password => "wrongpass")
+  sign_in
+end
+
 ###################################Feature : Request Access ######################################
 Given(/^I'm on the request submission page$/) do
+  create_visitor
+  sign_in
   visit eval("new_request_access_path")
 end
 

@@ -23,11 +23,7 @@ class UserMailer < ActionMailer::Base
     Member.find(:all, :conditions => ["group_id LIKE ?", admin_id]).each do |table_entry|
       emails << table_entry[:email_address]
     end
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> b47c28448c6474108d0bc0770f49959b829c39d0
     Mail.deliver do
       from    'fileshare597@gmail.com'
       to      emails
