@@ -35,11 +35,10 @@ Given /^I do not exist as a user$/ do
 end
 
 Given /^I am not logged in$/ do
-  visit '/members/sign_out'
+  visit '/'
 end
 
 When /^I sign in with valid credentials$/ do
-  create_visitor
   sign_in
 end
 
@@ -49,7 +48,7 @@ end
 
 Then /^I should be signed out$/ do
   page.should have_content "Sign up"
-  page.should have_content "Login"
+  page.should have_content "Sign in"
   page.should_not have_content "Logout"
 end
 
@@ -79,7 +78,7 @@ end
 
 ###################################Feature : Request Access ######################################
 Given(/^I'm on the request submission page$/) do
-  create_visitor
+  create_user
   sign_in
   visit eval("new_request_access_path")
 end
@@ -89,7 +88,7 @@ When(/^I add a new request$/) do
   fill_in 'Description', :with => "I am the supervisor of Levine hall and would like to request write access to Levine hall's bluebook."
   email_group_0 = Group.create(name: "Admin")
   school_1 = School.create(name: "SEAS")
-  Member.create(email_address: "fileshare597@gmail.com", first_name: "File", last_name: "Share" , pennkey: "test", school_id: school_1, group_id: email_group_0.id)
+  Member.create!(email_address: "fileshare597@gmail.com", first_name: "File", last_name: "Share" , pennkey: "test", school_id: school_1, group_id: email_group_0.id, email: 'fileshare597@gmail.com', password: '12345678', password_confirmation: '12345678')
   click_button 'Create Request access'
 end
 
@@ -116,6 +115,8 @@ end
 
 
 Given(/^I'm on the email group creation page$/) do
+  create_user
+  sign_in
   visit eval("new_group_path")
 end
 
@@ -137,6 +138,8 @@ end
 
 
 Given(/^I'm on the school creation page$/) do
+  create_user
+  sign_in
   School.create(name: "SEAS")
   visit eval("new_school_path")
 end
@@ -160,6 +163,25 @@ When(/^I add a new school which already exists$/) do
   click_button 'Create School'
 end
 
+Given(/^I'm on the school index page$/) do
+  create_user
+  sign_in
+  visit eval("schools_path")
+end
+
+Given(/^There already exists a school$/) do
+  school_1 = School.create(name: "SEAS")
+end
+
+When(/^I delete the school$/) do
+  school_id = School.find(:all, :conditions => ["name LIKE ?", "SEAS"]).first[:id]
+  find_button('Delete').click
+  # click_button 'Delete'
+end
+
+Then(/^I should see confirmation of deletion$/) do
+  pending # express the regexp above with the code you wish you had
+end
 
 
 
@@ -167,6 +189,8 @@ end
 
 
 Given(/^I'm on the member creation page$/) do
+  create_user
+  sign_in
   school_1 = School.create(name: "SEAS")
   Member.create(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id)
 
