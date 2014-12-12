@@ -33,9 +33,9 @@ class RequestAccessesController < ApplicationController
   end
 
   # GET /request_accesses/1/edit
-  def edit
-    @request_access = RequestAccess.find(params[:id])
-  end
+  # def edit
+#     @request_access = RequestAccess.find(params[:id])
+#   end
 
   # POST /request_accesses
   # POST /request_accesses.json

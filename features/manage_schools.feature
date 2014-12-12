@@ -23,6 +23,6 @@ Feature: Manage Schools
 		Given There already exists a school
 		Given I'm on the school update page
 		When I update the school name
-		Then I should see the updated entry
+		Then I should see the updated school name
 
 		

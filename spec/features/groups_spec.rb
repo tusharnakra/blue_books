@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-feature "Schools", :type => :feature do
+
+feature "Groups", :type => :feature do
   
   def create_and_login
     # Create an object only once per description
@@ -13,21 +14,20 @@ feature "Schools", :type => :feature do
     click_button "Sign in"
   end
   
-  describe "DELETE school" do
-    it "should be able to delete school" do
+  describe "DELETE group" do
+    it "should be able to delete group" do
       create_and_login
-      school = School.create(name: "SAS")
-      expect {School.destroy school}.to change(School, :count).by(-1)
+      group = Group.create(name: "SAS")
+      expect {Group.destroy group}.to change(Group, :count).by(-1)
     end
   end
   
   describe "GET index" do
     it "should get index" do
       create_and_login
-      visit eval("schools_path")
-      expect(page).to have_content 'Schools'
+      visit eval("groups_path")
+      expect(page).to have_content 'Groups'
     end
   end
-  
   
 end
