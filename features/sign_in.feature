@@ -1,7 +1,8 @@
 Feature: Sign in
-  In order to get access to protected sections of the site
-  A user
-  Should be able to sign in
+
+	As a user
+	I want to sign in
+	so that I can access protected sections of the site
 
     Scenario: User is not signed up
       Given I do not exist as a user

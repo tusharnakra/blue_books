@@ -35,11 +35,10 @@ Given /^I do not exist as a user$/ do
 end
 
 Given /^I am not logged in$/ do
-  visit '/members/sign_out'
+  visit '/'
 end
 
 When /^I sign in with valid credentials$/ do
-  create_visitor
   sign_in
 end
 
@@ -49,7 +48,7 @@ end
 
 Then /^I should be signed out$/ do
   page.should have_content "Sign up"
-  page.should have_content "Login"
+  page.should have_content "Sign in"
   page.should_not have_content "Logout"
 end
 
@@ -79,7 +78,7 @@ end
 
 ###################################Feature : Request Access ######################################
 Given(/^I'm on the request submission page$/) do
-  create_visitor
+  create_user
   sign_in
   visit eval("new_request_access_path")
 end
@@ -116,6 +115,8 @@ end
 
 
 Given(/^I'm on the email group creation page$/) do
+  create_user
+  sign_in
   visit eval("new_group_path")
 end
 
@@ -137,6 +138,8 @@ end
 
 
 Given(/^I'm on the school creation page$/) do
+  create_user
+  sign_in
   School.create(name: "SEAS")
   visit eval("new_school_path")
 end
@@ -167,6 +170,8 @@ end
 
 
 Given(/^I'm on the member creation page$/) do
+  create_user
+  sign_in
   school_1 = School.create(name: "SEAS")
   Member.create(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id)
 
