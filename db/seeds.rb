@@ -27,7 +27,7 @@ Member.create!(email_address: "shallav@seas.upenn.edu", first_name: "Shallav", l
 Member.create!(email_address: "anil@wharton.upenn.edu", first_name: "Anil", last_name: "Ambani" , pennkey: "anil", school_id: school_2.id, group_id: email_group_1.id, email: 'anil@wharton.upenn.edu', password: '12345678', password_confirmation: '12345678')
 Member.create!(email_address: "albert@sas.upenn.edu", first_name: "Albert", last_name: "Einstein" , pennkey: "albert", school_id: school_3.id, group_id: email_group_2.id, email: 'albert@sas.upenn.edu', password: '12345678', password_confirmation: '12345678')
 Member.create!(email_address: "steve@wharton.upenn.edu", first_name: "Steve", last_name: "Jobs" , pennkey: "steve", school_id: school_2.id, group_id: email_group_2.id, email: 'steve@wharton.upenn.edu', password: '12345678', password_confirmation: '12345678')
-Member.create!(email_address: "file@wharton.upenn.edu", first_name: "file", last_name: "share" , pennkey: "file", school_id: school_2.id, group_id: email_group_0.id, email: 'file@wharton.upenn.edu', password: '12345678', password_confirmation: '12345678')
+Member.create!(email_address: "fileshare597@gmail.com", first_name: "file", last_name: "share" , pennkey: "file", school_id: school_2.id, group_id: email_group_0.id, email: 'file@wharton.upenn.edu', password: '12345678', password_confirmation: '12345678')
 
 Book.create(name: "Homework 3", attachment: File.open(File.join(Rails.root,"public/app/assets/hw3.pdf")))
 Book.create(name: "Levine", attachment: File.open(File.join(Rails.root,"public/app/assets/Levine.pdf")))

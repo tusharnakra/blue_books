@@ -18,25 +18,11 @@ Feature: Manage Schools
 		Given I'm on the school creation page
 		When I add a new school which already exists
 		Then I should see errors on the page
-		
-	Scenario: Delete a pre-existing school
+
+	Scenario: Update a pre-existing school
 		Given There already exists a school
-		Given I'm on the school index page
-		When I delete the school
-		Then I should see confirmation of deletion
-		
-	# Scenario: Show members in a pre-existing school
-# 		Given I'm on the school creation page
-# 		When I add a new school which already exists
-# 		Then I should see errors on the page
-#
-# 	Scenario: Update a pre-existing school
-# 		Given I'm on the school creation page
-# 		When I add a new school which already exists
-# 		Then I should see errors on the page
-#
-# 	Scenario: View all pre-existing schools
-# 		Given I'm on the school creation page
-# 		When I add a new school which already exists
-# 		Then I should see errors on the page
+		Given I'm on the school update page
+		When I update the school name
+		Then I should see the updated school name
+
 		

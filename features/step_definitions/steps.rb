@@ -5,6 +5,14 @@ def create_visitor
     :password => "changeme", :password_confirmation => "changeme" }
 end
 
+def create_admin
+  create_visitor
+  delete_user
+  school_1 = School.create(name: "SEAS")
+  email_group_1 = Group.create(name: "Admin")
+  @user = Member.create!(email_address: @visitor[:email], first_name: "Testy", last_name: "McUserton" , pennkey: "tesla", school_id: school_1.id, group_id: email_group_1.id, email: @visitor[:email], password: @visitor[:password], password_confirmation: @visitor[:password_confirmation])
+end
+
 def create_user
   create_visitor
   delete_user
@@ -115,7 +123,7 @@ end
 
 
 Given(/^I'm on the email group creation page$/) do
-  create_user
+  create_admin
   sign_in
   visit eval("new_group_path")
 end
@@ -134,11 +142,31 @@ When(/^I add a new email group with no name$/) do
   click_button 'Create Group'
 end
 
+Given(/^There already exists a group$/) do
+  create_admin
+  sign_in
+  Group.create(name: "EG 2")
+end
+
+Given(/^I'm on the group update page$/) do
+  group_id = Group.find(:all, :conditions => ["name LIKE ?", "EG 2"]).first[:id]
+  visit "/groups/#{group_id}/edit"
+end
+
+When(/^I update the group name$/) do
+  fill_in 'Name', :with => "EG 3"
+  click_button 'Update Group'
+end
+
+Then(/^I should see the updated group name$/) do
+  School.find(:all, :conditions => ["name LIKE ?", "EG 3"])
+end
+
 # ###################################Feature : Manage Schools ######################################
 
 
 Given(/^I'm on the school creation page$/) do
-  create_user
+  create_admin
   sign_in
   School.create(name: "SEAS")
   visit eval("new_school_path")
@@ -163,24 +191,24 @@ When(/^I add a new school which already exists$/) do
   click_button 'Create School'
 end
 
-Given(/^I'm on the school index page$/) do
-  create_user
-  sign_in
-  visit eval("schools_path")
-end
-
 Given(/^There already exists a school$/) do
-  school_1 = School.create(name: "SEAS")
+  create_admin
+  sign_in
+  school = School.create(name: "SEAS")
 end
 
-When(/^I delete the school$/) do
+Given(/^I'm on the school update page$/) do
   school_id = School.find(:all, :conditions => ["name LIKE ?", "SEAS"]).first[:id]
-  find_button('Delete').click
-  # click_button 'Delete'
+  visit "/schools/#{school_id}/edit"
 end
 
-Then(/^I should see confirmation of deletion$/) do
-  pending # express the regexp above with the code you wish you had
+When(/^I update the school name$/) do
+  fill_in 'Name', :with => "SAS"
+  click_button 'Update School'
+end
+
+Then(/^I should see the updated school name$/) do
+  School.find(:all, :conditions => ["name LIKE ?", "SAS"])
 end
 
 
@@ -189,10 +217,11 @@ end
 
 
 Given(/^I'm on the member creation page$/) do
-  create_user
+  create_admin
   sign_in
   school_1 = School.create(name: "SEAS")
-  Member.create(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id)
+  
+  Member.create!(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id, email: "ntushar@seas.upenn.edu", password: '12345678', password_confirmation: '12345678')
 
   visit eval("new_member_path")
 end
@@ -272,4 +301,40 @@ When(/^I add a new member with a duplicate email address$/) do
   fill_in 'Email address', :with => "ntushar@seas.upenn.edu"
   select('SEAS', :from => "School")
   click_button 'Create Member'
+end
+
+###################################Feature : Manage Books ######################################
+
+Given(/^I'm on the book addition page$/) do
+  create_admin
+  sign_in
+  school_1 = School.create(name: "SEAS")
+  Member.create!(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id, email: "ntushar@seas.upenn.edu", password: '12345678', password_confirmation: '12345678')
+  visit eval("new_book_path")
+end
+
+When(/^I add a new book$/) do
+  fill_in 'Name', :with => "Levine_test.pdf"
+  attach_file(:attachment, File.join(Rails.root, "public/app/assets/Levine.pdf")) 
+  click_button 'Save'
+end
+
+Then(/^I should see the confirmation of book's addition$/) do
+  assert page.has_content?("The book Levine_test has been uploaded.")
+end
+
+When(/^I add a new book with no name$/) do
+  page.attach_file('attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf")) 
+  click_button 'Save'
+end
+
+When(/^I add a new book which already exists$/) do
+  fill_in 'Name', :with => "Levine.pdf"
+  page.attach_file('attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf")) 
+  click_button 'Save'
+end
+
+When(/^I add a book without attachment$/) do
+  fill_in 'Name', :with => "Levine_test.pdf"
+  click_button 'Save'
 end
