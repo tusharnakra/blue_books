@@ -41,4 +41,27 @@ class BooksController < ApplicationController
     send_file("#{Rails.root}/public" + book.attachment_url)
   end
 
+  def update
+    @book = Book.find(params[:id]);
+    if current_member.group.name.downcase.eql?"admin"
+      render :template =>"books/update_post_approval"
+    else
+      redirect_to new_send_document_path
+    end
+  end
+
+  
+  def update_post_approval
+    @book = Book.find(params[:id])
+    p params
+    @book.destroy
+    @book = Book.new(params[:book])
+
+    if @book.save
+      redirect_to books_path, notice: "The book #{@book.name} has been uploaded."
+    else
+      render "new"
+    end
+  end
+
 end

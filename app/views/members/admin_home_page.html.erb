@@ -1,18 +1,25 @@
 <%- model_class = Member -%>
 	<%= render :partial => 'navBar' %>
-
+    <div style="background-color:#eeeeee;padding:20px">
     <%= form_tag search_path, :method => 'get' do %>
     
     <ul>
+      <% if current_member.group.name.downcase.eql?"admin" %>
       <li><h6><%= link_to("Search for a member", members_path) %></h6></li>
       <li><h6><%= link_to("Create a new member", new_member_path) %></h6></li>
-      <li><h6><%= link_to("Add a new school", new_school_path)%></h6></li>
+      <li><h6><%= link_to("Manage Schools", schools_path)%></h6></li>
       <li><h6><%= link_to("Manage Groups", groups_path) %></h6></li>
+      <% end %>
+
+      <% unless current_member.group.name.downcase.eql?"admin" %>
+      <li><h6><%= link_to("Request Access", new_request_access_path) %></h6></li>
+      <% end %>
+      <li><h6><%= link_to("Books", books_path) %></h6></li>
       
     </ul>
     
     <% end %>
-    
+    </div>
 
 
   </div>

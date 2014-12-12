@@ -1,7 +1,8 @@
 <%- model_class = RequestAccess -%>
 	<%= render :partial => 'navBar' %>
 	<h4><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h4>
-
+    <div style="background-color:#eeeeee;padding:20px">
 	<%= render :partial => 'form' %>
+    </div>
 	</div>
 </div>	
