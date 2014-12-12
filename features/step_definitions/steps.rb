@@ -163,6 +163,25 @@ When(/^I add a new school which already exists$/) do
   click_button 'Create School'
 end
 
+Given(/^I'm on the school index page$/) do
+  create_user
+  sign_in
+  visit eval("schools_path")
+end
+
+Given(/^There already exists a school$/) do
+  school_1 = School.create(name: "SEAS")
+end
+
+When(/^I delete the school$/) do
+  school_id = School.find(:all, :conditions => ["name LIKE ?", "SEAS"]).first[:id]
+  find_button('Delete').click
+  # click_button 'Delete'
+end
+
+Then(/^I should see confirmation of deletion$/) do
+  pending # express the regexp above with the code you wish you had
+end
 
 
 

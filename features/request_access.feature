@@ -20,4 +20,3 @@ Feature: Request Access
 		Given I'm on the request submission page
 		When I add a new request with no description
 		Then I should see errors on the page
-	
