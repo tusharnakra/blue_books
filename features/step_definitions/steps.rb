@@ -88,7 +88,7 @@ When(/^I add a new request$/) do
   fill_in 'Description', :with => "I am the supervisor of Levine hall and would like to request write access to Levine hall's bluebook."
   email_group_0 = Group.create(name: "Admin")
   school_1 = School.create(name: "SEAS")
-  Member.create(email_address: "fileshare597@gmail.com", first_name: "File", last_name: "Share" , pennkey: "test", school_id: school_1, group_id: email_group_0.id)
+  Member.create!(email_address: "fileshare597@gmail.com", first_name: "File", last_name: "Share" , pennkey: "test", school_id: school_1, group_id: email_group_0.id, email: 'fileshare597@gmail.com', password: '12345678', password_confirmation: '12345678')
   click_button 'Create Request access'
 end
 
