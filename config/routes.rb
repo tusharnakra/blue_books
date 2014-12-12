@@ -28,6 +28,7 @@ BlueBooks::Application.routes.draw do
   match 'schools/show_members_in_school/:id' => "schools#show_members_in_school", :as => 'show_members_in_school'
   resources :schools
 
+  post 'members/create_new_member' => "members#create_new_member", :as => 'create_new_member'
   match 'members/admin_home_page' => "members#admin_home_page"
   resources :members
   get 'search' => "members#search"
@@ -36,6 +37,9 @@ BlueBooks::Application.routes.draw do
   resources :request_accesses
   
   # Added for carrierwave-aditya
+  get 'books/update_post_approval/:id' => 'books#update_post_approval', :as => 'update_post_approval'
+  put 'books/update_post_approval/:id' => 'books#update_post_approval', :as => 'update_post_approval'
+  get 'books/update/:id' => 'books#update', :as => 'update'
   match 'books/showBook_pdf/:id' => 'books#showBook_pdf', :as => 'showBook_pdf'
   resources :books, only: [:index, :new, :create, :destroy]
   get 'book_search' => "books#book_search"  

@@ -1,0 +1,19 @@
+<%- model_class = Member -%>
+	<%= render :partial => 'navBar' %>
+
+    <%= form_tag search_path, :method => 'get' do %>
+    
+    <ul>
+      <li><h6><%= link_to("Search for a member", members_path) %></h6></li>
+      <li><h6><%= link_to("Create a new member", new_member_path) %></h6></li>
+      <li><h6><%= link_to("Add a new school", new_school_path)%></h6></li>
+      <li><h6><%= link_to("Manage Groups", groups_path) %></h6></li>
+      
+    </ul>
+    
+    <% end %>
+    
+
+
+  </div>
+</div>

@@ -1,8 +1,6 @@
 <%- model_class = Book -%>
     <%= render :partial => 'navBar' %>
-    <%= link_to "New Book", new_book_path, class: "btn btn-primary" %>
-    <br />
-    <br />
+    
     <%= form_tag book_search_path, :method => 'get' do %>
     
     <table>
@@ -19,9 +17,11 @@
       </tr>
       
       <tr>
-        <td>
-          <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
-        </td>
+        <table><tr>
+        <td><%= submit_tag "Search", :name => nil, :class => "btn btn-default" %></td>
+        <td><%= link_to "New Book", new_book_path, class: "btn btn-primary" if current_member.group.name.downcase.eql?"admin"%></td>
+        <td><%= link_to "Back", members_admin_home_page_path, :class => 'btn btn-default' %></td>
+        </tr></table>
       </tr>
       
     </table>
@@ -39,7 +39,8 @@
           <tr>
             <td><%= link_to book.name, showBook_pdf_path(book) %></td>
             <td><%= link_to "Download Book", download_book_path(book), :class => "btn btn-default" %></td>
-            <td><%= button_to "Delete",  book, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{book.name}?" %></td>
+            <td><%= link_to "Update", update_path(book), :class => 'btn btn-mini' %>
+            <%= link_to "Delete",  book, method: :delete, class: "btn btn-danger btn-mini", confirm: "Are you sure that you wish to delete #{book.name}?" if current_member.group.name.downcase.eql?"admin"%></td>
           </tr>
         <% end %>
       </tbody>

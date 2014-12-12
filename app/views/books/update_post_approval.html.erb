@@ -1,0 +1,25 @@
+<%- model_class = Book -%>
+    <%= render :partial => 'navBar' %>
+    <% if !@book.errors.empty? %>
+      <div class="alert alert-error">
+        <ul>
+          <% @book.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="well">
+      <%= form_for @book, html: { multipart: true }, :url => {:action =>'update_post_approval'} do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, :input_html => {:value => "#{@book.name}"} %>
+        <%= f.label :attachment %>
+        <%= f.file_field :attachment %><br/>
+        <%= f.submit "Save", class: "btn btn-primary" %>
+        <%= link_to "Cancel", books_path, :class => 'btn' %>
+      <% end %>
+
+    </div>
+</div>
+</div>
