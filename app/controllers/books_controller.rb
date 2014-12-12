@@ -9,7 +9,9 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(params[:book])
-
+    p "********************"
+    p params
+    "**************************"
     if @book.save
       redirect_to books_path, notice: "The book #{@book.name} has been uploaded."
     else
