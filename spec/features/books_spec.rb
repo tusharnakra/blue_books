@@ -22,37 +22,34 @@ feature "Books", :type => :feature do
 #       expect {Group.destroy group}.to change(Group, :count).by(-1)
 #     end
 #   end
-    
-  before :each do
-    create_and_login
-    # @file = fixture_file_upload('files/Levine.pdf', 'text/xml')
-  end
 
   # describe "POST /subscriber_imports" do
 #     let(:file) { { :file => fixture_file_upload('/files/Levine.pdf', 'text/pdf') } }
 #     subject { post :create, :subscriber_import => file }
 #   end
 
- #  it "can upload a book" do
-#     # visit eval("new_book_path")
-# #     fill_in 'Name', :with => "Levine_test.pdf"
-#     @file = fixture_file_upload('/files/Levine.pdf', 'text/xml')
+  # it "can upload a book" do
+#     create_and_login
+#     @file = fixture_file_upload('/files/Levine.pdf', 'text/pdf')
+#
+#     visit eval("new_book_path")
+#     fill_in 'Name', :with => "Levine_test.pdf"
 #     # temp = File.open('somewhere')
-#     # attach_file('attachment', @file)
-#     # click_button 'Save'
-#     post :create, :name => "Levine_test.pdf", :attachment => @file
-#     response.should be_success
+#     # p Rails.root +  "/spec/fixtures/files/Levine.pdf"
+#     # attach_file('attachment',  File.join(Rails.root, '/spec/fixtures/files/Levine.pdf'))
+#     attach_file('book_attachment', '/Users/Shallav/Desktop/Fall 2014/CIT597/CIT_Project/blue_books/spec/fixtures/files/Levine.pdf')
+#     click_button 'Save'
 #   end
-  
-  
-  
-  # describe "GET index" do
-#     it "should get index" do
-#       create_and_login
-#       visit eval("books_path")
-#       expect(page).to have_content 'Books'
-#     end
-#   end
+
+
+
+  describe "GET index" do
+    it "should get index" do
+      create_and_login
+      visit eval("books_path")
+      expect(page).to have_content 'Books'
+    end
+  end
 
   describe "GET directory " do
     it "checks the storage directory for uploader" do

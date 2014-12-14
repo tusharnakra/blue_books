@@ -378,29 +378,68 @@ Given(/^I'm on the book addition page$/) do
   visit eval("new_book_path")
 end
 
-# When(/^I add a new book$/) do
-#   fill_in 'Name', :with => "Levine_test.pdf"
-#   # temp = File.open('somewhere')
-#   attach_file('attachment', File.join(Rails.root, "public/app/assets/hw3.pdf"))
-#   click_button 'Save'
-# end
-
-Then(/^I should see the confirmation of book's addition$/) do
-  assert page.has_content?("The book Levine_test has been uploaded.")
+When(/^I add a new book$/) do
+  fill_in 'Name', :with => "Levine_test.pdf"
+  attach_file('book_attachment', File.join(Rails.root, "public/app/assets/Levine.pdf"))
+  click_button 'Save'
 end
 
-# When(/^I add a new book with no name$/) do
-#   page.attach_file('attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf"))
-#   click_button 'Save'
-# end
+Then(/^I should see the confirmation of book's addition$/) do
+  assert page.has_content?("The book Levine_test.pdf has been uploaded.")
+end
 
-# When(/^I add a new book which already exists$/) do
-#   fill_in 'Name', :with => "Levine.pdf"
-#   page.attach_file('attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf"))
-#   click_button 'Save'
-# end
+When(/^I add a new book with no name$/) do
+  attach_file('book_attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf"))
+  click_button 'Save'
+end
+
+When(/^I add a new book which already exists$/) do
+  fill_in 'Name', :with => "Levine.pdf"
+  attach_file('book_attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf"))
+  click_button 'Save'
+  visit eval("new_book_path")
+  fill_in 'Name', :with => "Levine.pdf"
+  attach_file('book_attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf"))
+  click_button 'Save'
+end
 
 When(/^I add a book without attachment$/) do
   fill_in 'Name', :with => "Levine_test.pdf"
   click_button 'Save'
 end
+
+Given(/^I'm on the books index page$/) do
+  create_admin
+  sign_in
+  school_1 = School.create(name: "SEAS")
+  Member.create!(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id, email: "ntushar@seas.upenn.edu", password: '12345678', password_confirmation: '12345678')
+  visit eval("new_book_path")
+  fill_in 'Name', :with => "Levine_test"
+  attach_file('book_attachment', File.join(Rails.root, "public/app/assets/Levine.pdf"))
+  click_button 'Save'
+  visit eval("books_path")
+end
+
+When(/^I search for a book by name$/) do
+  fill_in 'book_search', :with => 'Levine_test'
+  click_button 'Search'
+end
+
+Then(/^I should see the result whose name matches the query$/) do
+  assert page.has_content?("Levine_test")
+end
+
+When(/^I update an already existing book$/) do
+  book = Book.first
+  visit update_post_approval_path(book)
+  attach_file('book_attachment', File.join(Rails.root, "public/app/assets/hw3.pdf"))
+  click_button 'Save'
+end
+
+Then(/^I should see the confirmation of book's updation$/) do
+  assert page.has_content?("The book Levine_test.pdf has been updated.")
+end
+
+# Given(/^I'm on the books index page logged in as user$/) do
+#   pending # express the regexp above with the code you wish you had
+# end

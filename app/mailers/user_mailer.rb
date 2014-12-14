@@ -6,7 +6,7 @@ class UserMailer < ActionMailer::Base
     Member.find(:all, :conditions => ["group_id LIKE ?", admin_id]).each do |table_entry|
       emails << table_entry[:email_address]
     end
-    p emails
+    
     Mail.deliver do
       from    'fileshare597@gmail.com'
       to      emails
@@ -31,9 +31,5 @@ class UserMailer < ActionMailer::Base
       attachments.inline[File.basename(send_document.attachment.path)] = File.read(send_document.attachment.path)
       body    send_document.description
     end
-  end
-  
-  def notify_groups()
-     
   end
 end

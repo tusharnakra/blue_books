@@ -25,6 +25,7 @@ group :test, :development do
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
+  # gem "capybara-webkit"
   gem 'launchy'
   gem 'sqlite3'
   gem 'rspec-rails'
