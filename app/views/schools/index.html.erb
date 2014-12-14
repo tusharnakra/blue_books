@@ -13,6 +13,7 @@
     </tr>
   </thead>
   <tbody>
+    <% unless @schools.nil? %>
     <% @schools.each do |school| %>
       <tr>
         <td><%= link_to school.id, school_path(school) %></td>
@@ -28,6 +29,7 @@
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>

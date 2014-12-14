@@ -14,7 +14,7 @@
   <dt><strong><%= model_class.human_attribute_name(:email_address) %>:</strong></dt>
   <dd><%= @member.email_address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:school_id) %>:</strong></dt>
-  <dd><%= @member.school_id %></dd>
+  <dd><%= @member.school.name %></dd>
 </dl>
 
 <div class="form-actions">
