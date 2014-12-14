@@ -2,7 +2,6 @@ class EmailValidator < ActiveModel::EachValidator
   def validate_each(record,attribute,value)
     begin
       m = Mail::Address.new(value)
-      print value
       # We must check that value contains a domain and that value is an email address
       r = m.domain && m.address == value
       t = m.__send__(:tree)
