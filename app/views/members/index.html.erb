@@ -61,8 +61,8 @@
             <td><%= member.first_name %></td>
             <td><%= member.last_name %></td>
             <td><%= member.email_address %></td>
-            <td><%= member.school.name %></td>
-            <td><%= member.group.name %></td>
+            <td><%= member.school.name unless member.school.nil? %></td>
+            <td><%= member.group.name unless member.group.nil? %></td>
             <td>
               <%= link_to t('.edit', :default => t("helpers.links.edit")),
                           edit_member_path(member), :class => 'btn btn-mini' %>

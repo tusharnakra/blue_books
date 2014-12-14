@@ -303,6 +303,68 @@ When(/^I add a new member with a duplicate email address$/) do
   click_button 'Create Member'
 end
 
+
+Given(/^I'm on the manage members page$/) do
+  create_admin
+  sign_in
+  school_1 = School.create(name: "SEAS")
+  Member.create!(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id, email: "ntushar@seas.upenn.edu", password: '12345678', password_confirmation: '12345678')
+  visit eval("members_path")
+end
+
+When(/^I search for a member using their first name$/) do
+  fill_in 'fnsearch', :with => "Tushar"
+  click_button 'Search'
+end
+
+Then(/^I should see results whose first name matches the query$/) do
+  assert page.has_content?("Tushar")
+end
+
+When(/^I search for a member using their last name$/) do
+  fill_in 'lnsearch', :with => "Nakra"
+  click_button 'Search'
+end
+
+Then(/^I should see results whose last name matches the query$/) do
+  assert page.has_content?("Nakra")
+end
+
+When(/^I search for a member using their pennkey$/) do
+  fill_in 'pksearch', :with => "tusharn"
+  click_button 'Search'
+end
+
+Then(/^I should see results whose pennkey matches the query$/) do
+  assert page.has_content?("tusharn")
+end
+
+When(/^I search for a member using their email address$/) do
+  fill_in 'easearch', :with => "ntushar@seas.upenn.edu"
+  click_button 'Search'
+end
+
+Then(/^I should see results whose email address matches the query$/) do
+  assert page.has_content?("ntushar@seas.upenn.edu")
+end
+
+Given(/^I' am on the member update member$/) do
+  create_admin
+  sign_in
+  school_1 = School.create(name: "SEAS")
+  member = Member.create!(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id, email: "ntushar@seas.upenn.edu", password: '12345678', password_confirmation: '12345678')
+  visit eval("edit_member_path(member)")
+end
+
+When(/^I update an attribute of the member$/) do
+  fill_in 'First name', :with => 'asd'
+  click_button "Update Member"
+end
+
+Then(/^I should see the confirmation of the member being updated$/) do
+  assert page.has_content?("Member was successfully updated.")
+end
+
 ###################################Feature : Manage Books ######################################
 
 Given(/^I'm on the book addition page$/) do

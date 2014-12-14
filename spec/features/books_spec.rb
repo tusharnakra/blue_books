@@ -1,4 +1,5 @@
 require 'rails_helper'
+require_relative '../../app/uploaders/attachment_uploader'
 
 feature "Books", :type => :feature do
   
@@ -26,6 +27,14 @@ feature "Books", :type => :feature do
       create_and_login
       visit eval("books_path")
       expect(page).to have_content 'Books'
+    end
+  end
+
+  describe "GET directory " do
+    it "checks the storage directory for uploader" do
+      attachment_uploader = AttachmentUploader.new
+      directory = attachment_uploader.store_dir
+      expect(directory).to eq 'app/assets'
     end
   end
 end

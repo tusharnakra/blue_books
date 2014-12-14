@@ -21,13 +21,14 @@ BlueBooks::Application.routes.draw do
   #match 'documents/show_pdf/:id' => 'documents#show_pdf', :as => 'show_pdf' 
   #resources :documents
   #match '/download/:id' => 'documents#download', :as => 'download'
- 
+  match 'groups/edit_members_in_group/:id' => "groups#edit_members_in_group", :as => 'edit_members_in_group'
   match 'groups/showMembersInGroup/:id' => "groups#showMembersInGroup", :as => 'showMembersInGroup'
   resources :groups
 
   match 'schools/show_members_in_school/:id' => "schools#show_members_in_school", :as => 'show_members_in_school'
   resources :schools
-
+  
+  put 'members/remove_member_from_group/:id' => "members#remove_member_from_group", :as => 'remove_member_from_group'
   post 'members/create_new_member' => "members#create_new_member", :as => 'create_new_member'
   match 'members/admin_home_page' => "members#admin_home_page"
   resources :members

@@ -1,16 +1,18 @@
 <%- model_class = Group -%>
   <%= render :partial => 'navBar' %>
-  <h4><%= "Group: #{@group.name}" %></h4>
+  <h4><%= "Group: #{@current_group.name}" %></h4>
   <table class="table table-striped">
   <tbody>
-    <% unless @membersInGroup.nil? %>
-    <% @membersInGroup.each do |member| %>
+    <% unless @members_in_group.nil? %>
+    <% @members_in_group.each do |member| %>
       <tr>
         <td><%= member.first_name %></td>
         <td><%= member.last_name %></td>
         <td><%= member.pennkey %></td>
         <td><%= member.email_address %></td>
         <td><%= member.school.name %></td>
+        <td>
+          <%= link_to "Remove", remove_member_from_group_path(member),:class => 'btn', :method => :put unless @current_group.name.downcase.eql?"admin"%></td>
       </tr>
     <% end %>
     <% end %>
