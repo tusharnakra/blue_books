@@ -33,3 +33,8 @@ Feature: Manage Books
 		Given I'm on the books index page
 		When I update an already existing book
 		Then I should see the confirmation of book's updation
+		
+	Scenario: View an existing book
+		Given I'm on the books index page
+		When click on the book's name
+		Then I should see the contents of the book

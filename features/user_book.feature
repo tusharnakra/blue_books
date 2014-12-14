@@ -6,6 +6,6 @@ Feature: Update Books
 	
 	Scenario: Update an existing book
 		Given I'm on the books index page logged in as user
-		When I update an already existing book
+		When I update an already existing book as user
 		And "fileshare597@gmail.com" should receive an email
-		Then I should see the confirmation of book's updation
+		Then I should see the confirmation of email sent for approval

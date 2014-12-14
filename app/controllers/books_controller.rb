@@ -43,6 +43,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id]);
+    # p @book
     if current_member.group.name.downcase.eql?"admin"
       render :template =>"books/update_post_approval"
     else
@@ -53,10 +54,8 @@ class BooksController < ApplicationController
   
   def update_post_approval
     @book = Book.find(params[:id])
-    
     @book.destroy
     @book = Book.new(params[:book])
-
     if @book.save
       redirect_to books_path, notice: "The book #{@book.name} has been updated."
     else

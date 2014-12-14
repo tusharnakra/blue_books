@@ -18,7 +18,7 @@ def create_user
   delete_user
   school_1 = School.create(name: "SEAS")
   email_group_1 = Group.create(name: "Email Group 1")
-  @user = Member.create!(email_address: @visitor[:email], first_name: "Testy", last_name: "McUserton" , pennkey: "tesla", school_id: school_1.id, group_id: email_group_1.id, email: @visitor[:email], password: @visitor[:password], password_confirmation: @visitor[:password_confirmation])
+  @user = Member.create!(email_address: @visitor[:email], first_name: "Testy", last_name: "McUserton" , pennkey: "tesla_user", school_id: school_1.id, group_id: email_group_1.id, email: @visitor[:email], password: @visitor[:password], password_confirmation: @visitor[:password_confirmation])
 end
 
 def delete_user
@@ -215,7 +215,7 @@ Given(/^I'm on the member creation page$/) do
   create_admin
   sign_in
   school_1 = School.create(name: "SEAS")
-  
+
   Member.create!(email_address: "ntushar@seas.upenn.edu", first_name: "Tushar", last_name: "Nakra" , pennkey: "tusharn", school_id: school_1.id, email: "ntushar@seas.upenn.edu", password: '12345678', password_confirmation: '12345678')
 
   visit eval("new_member_path")
@@ -431,15 +431,48 @@ end
 
 When(/^I update an already existing book$/) do
   book = Book.first
-  visit update_post_approval_path(book)
-  attach_file('book_attachment', File.join(Rails.root, "public/app/assets/hw3.pdf"))
+  visit update_path(book)
+  attach_file('book_attachment', File.join(Rails.root, "public/app/assets/Moore.pdf"))
   click_button 'Save'
 end
 
-Then(/^I should see the confirmation of book's updation$/) do
-  assert page.has_content?("The book Levine_test.pdf has been updated.")
+When(/^I update an already existing book as user$/) do
+  book = Book.first
+  visit update_path(book)
+  fill_in 'send_document_subject', :with => 'Request for Book Update'
+  fill_in 'send_document_description', :with => 'Attached.'
+  attach_file('send_document_attachment', File.join(Rails.root, "public/app/assets/Moore.pdf"))
+  click_button 'Submit for approval'
 end
 
-# Given(/^I'm on the books index page logged in as user$/) do
-#   pending # express the regexp above with the code you wish you had
-# end
+Then(/^I should see the confirmation of book's updation$/) do
+  assert page.has_content?("The book Levine_test has been updated.")
+end
+
+Then(/^I should see the confirmation of email sent for approval$/) do
+  assert page.has_content?("Document was sent for approval.")
+end
+
+Given(/^I'm on the books index page logged in as user$/) do
+  create_admin
+  sign_in
+  school_2 = School.create(name: "SAS")
+  # email_group_0 = Group.create(name: "Admin")
+  Member.create!(email_address: "fileshare597@gmail.com", first_name: "File", last_name: "Share" , pennkey: "test", school_id: school_2, group_id: '1', email: 'fileshare597@gmail.com', password: '12345678', password_confirmation: '12345678')
+  visit eval("new_book_path")
+  fill_in 'Name', :with => "Levine_test"
+  attach_file('book_attachment', File.join(Rails.root, "public/app/assets/Levine.pdf"))
+  click_button 'Save'
+  click_link 'Logout'
+  create_user
+  sign_in
+  visit eval("books_path")
+end
+
+When(/^click on the book's name$/) do
+  click_link Book.first[:name]
+end
+
+Then(/^I should see the contents of the book$/) do
+  assert page.has_content?(Book.first[:name])
+end

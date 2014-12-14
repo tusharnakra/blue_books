@@ -15,32 +15,17 @@ feature "Books", :type => :feature do
     click_button "Sign in"
   end
   
-  # describe "DELETE books" do
-#     it "should be able to delete school" do
-#       create_and_login
-#       group = Group.create(name: "SAS")
-#       expect {Group.destroy group}.to change(Group, :count).by(-1)
-#     end
-#   end
-
-  # describe "POST /subscriber_imports" do
-#     let(:file) { { :file => fixture_file_upload('/files/Levine.pdf', 'text/pdf') } }
-#     subject { post :create, :subscriber_import => file }
-#   end
-
-  # it "can upload a book" do
-#     create_and_login
-#     @file = fixture_file_upload('/files/Levine.pdf', 'text/pdf')
-#
-#     visit eval("new_book_path")
-#     fill_in 'Name', :with => "Levine_test.pdf"
-#     # temp = File.open('somewhere')
-#     # p Rails.root +  "/spec/fixtures/files/Levine.pdf"
-#     # attach_file('attachment',  File.join(Rails.root, '/spec/fixtures/files/Levine.pdf'))
-#     attach_file('book_attachment', '/Users/Shallav/Desktop/Fall 2014/CIT597/CIT_Project/blue_books/spec/fixtures/files/Levine.pdf')
-#     click_button 'Save'
-#   end
-
+  describe "DELETE books" do
+    it "should be able to delete book" do
+      create_and_login
+      visit eval("new_book_path")
+      fill_in 'Name', :with => "Levine_test"
+      attach_file('book_attachment', File.join(Rails.root, "public/app/assets/Levine.pdf"))
+      click_button 'Save'
+      visit books_path
+      expect {click_link 'Delete'}.to change(Book, :count).by(-1)
+    end
+  end
 
 
   describe "GET index" do
