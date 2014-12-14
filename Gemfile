@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.0.0"
 gem 'rails', '3.2.19'
 
 # Bundle edge Rails instead:
@@ -16,7 +16,7 @@ gem 'carrierwave', '~> 0.9'
 gem 'mail'
 gem 'annotate'
 
-gem 'devise'
+gem 'devise', '3.0.3'
 gem 'cancan'
 gem 'role_model'
 
