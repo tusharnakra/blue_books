@@ -39,21 +39,21 @@ class MembersController < ApplicationController
 
   # POST /members
   # POST /members.json
-  def create
-    p "**********************"
-    @member = Member.new(params[:member])
+  # def create
+  #   p "**********************"
+  #   @member = Member.new(params[:member])
 
 
-    respond_to do |format|
-      if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
-        format.json { render json: @member, status: :created, location: @member }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @member.save
+  #       format.html { redirect_to @member, notice: 'Member was successfully created.' }
+  #       format.json { render json: @member, status: :created, location: @member }
+  #     else
+  #       format.html { render action: "new" }
+  #       format.json { render json: @member.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PUT /members/1
   # PUT /members/1.json
@@ -111,5 +111,17 @@ class MembersController < ApplicationController
         format.json { render json: @member.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def remove_member_from_group
+    @member = Member.find(params[:id])
+    @old_group = @member.group
+    if @member.update_attributes(:group_id => nil)
+       redirect_to edit_members_in_group_path(@old_group) 
+      else
+        format.json { render json: @member.errors, status: :unprocessable_entity }
+        redirect_to edit_members_in_group_path(@old_group)
+      end
+    
   end
 end

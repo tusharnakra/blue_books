@@ -40,5 +40,5 @@ feature "Schools", :type => :feature do
       page.should have_content(@schools[0].name)
       page.should have_content(@user[:email])
     end
-  end 
+  end
 end

@@ -13,9 +13,3 @@ Feature: Manage Email Groups
 		Given I'm on the email group creation page
 		When I add a new email group with no name
 		Then I should see errors on the page
-		
-	Scenario: Update a pre-existing group
-		Given There already exists a group
-		Given I'm on the group update page
-		When I update the group name
-		Then I should see the updated group name

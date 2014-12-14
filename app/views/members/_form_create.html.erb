@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-<%= form_for @member, :html => { :class => 'form-horizontal' }  do |f| %>
+<%= form_for @member, :html => { :class => 'form-horizontal' }, :url => create_new_member_path(@member)  do |f| %>
   
 
   <div class="control-group">

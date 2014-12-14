@@ -1,7 +1,8 @@
 require 'rails_helper'
+require_relative '../../app/uploaders/attachment_uploader'
 
 feature "Books", :type => :feature do
-  describe BooksController, type: :controller do
+  # describe BooksController, type: :controller do
   # include RSpec::Rails::ControllerExampleGroup
   def create_and_login
     # Create an object only once per description
@@ -32,16 +33,16 @@ feature "Books", :type => :feature do
 #     subject { post :create, :subscriber_import => file }
 #   end
 
-  it "can upload a book" do
-    # visit eval("new_book_path")
-#     fill_in 'Name', :with => "Levine_test.pdf"
-    @file = fixture_file_upload('/files/Levine.pdf', 'text/xml')
-    # temp = File.open('somewhere')
-    # attach_file('attachment', @file)
-    # click_button 'Save'
-    post :create, :name => "Levine_test.pdf", :attachment => @file
-    response.should be_success
-  end
+ #  it "can upload a book" do
+#     # visit eval("new_book_path")
+# #     fill_in 'Name', :with => "Levine_test.pdf"
+#     @file = fixture_file_upload('/files/Levine.pdf', 'text/xml')
+#     # temp = File.open('somewhere')
+#     # attach_file('attachment', @file)
+#     # click_button 'Save'
+#     post :create, :name => "Levine_test.pdf", :attachment => @file
+#     response.should be_success
+#   end
   
   
   
@@ -52,5 +53,12 @@ feature "Books", :type => :feature do
 #       expect(page).to have_content 'Books'
 #     end
 #   end
-end
+
+  describe "GET directory " do
+    it "checks the storage directory for uploader" do
+      attachment_uploader = AttachmentUploader.new
+      directory = attachment_uploader.store_dir
+      expect(directory).to eq 'app/assets'
+    end
+  end
 end

@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(params[:book])
-
+    
     if @book.save
       redirect_to books_path, notice: "The book #{@book.name} has been uploaded."
     else
@@ -53,7 +53,7 @@ class BooksController < ApplicationController
   
   def update_post_approval
     @book = Book.find(params[:id])
-    p params
+    
     @book.destroy
     @book = Book.new(params[:book])
 
