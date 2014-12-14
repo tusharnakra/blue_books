@@ -37,4 +37,9 @@ Feature: Manage Members
 	Scenario: Add a pre-existing email address
 		Given I'm on the member creation page
 		When I add a new member with a duplicate email address
+		Then I should see errors on the page
+		
+	Scenario: Add an email address in incorrect format
+		Given I'm on the member creation page
+		When I add a new member with an invalid email address
 		Then I should see errors on the page	

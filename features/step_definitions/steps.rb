@@ -303,6 +303,15 @@ When(/^I add a new member with a duplicate email address$/) do
   click_button 'Create Member'
 end
 
+When(/^I add a new member with an invalid email address$/) do
+  fill_in 'Pennkey', :with => "nt"
+  fill_in 'First name', :with => "addition"
+  fill_in 'Last name', :with => "subtraction"
+  fill_in 'Email address', :with => "ntushar.seas.upenn.edu"
+  select('SEAS', :from => "School")
+  click_button 'Create Member'
+end
+
 ###################################Feature : Manage Books ######################################
 
 Given(/^I'm on the book addition page$/) do
@@ -313,26 +322,27 @@ Given(/^I'm on the book addition page$/) do
   visit eval("new_book_path")
 end
 
-When(/^I add a new book$/) do
-  fill_in 'Name', :with => "Levine_test.pdf"
-  attach_file(:attachment, File.join(Rails.root, "public/app/assets/Levine.pdf")) 
-  click_button 'Save'
-end
+# When(/^I add a new book$/) do
+#   fill_in 'Name', :with => "Levine_test.pdf"
+#   # temp = File.open('somewhere')
+#   attach_file('attachment', File.join(Rails.root, "public/app/assets/hw3.pdf"))
+#   click_button 'Save'
+# end
 
 Then(/^I should see the confirmation of book's addition$/) do
   assert page.has_content?("The book Levine_test has been uploaded.")
 end
 
-When(/^I add a new book with no name$/) do
-  page.attach_file('attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf")) 
-  click_button 'Save'
-end
+# When(/^I add a new book with no name$/) do
+#   page.attach_file('attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf"))
+#   click_button 'Save'
+# end
 
-When(/^I add a new book which already exists$/) do
-  fill_in 'Name', :with => "Levine.pdf"
-  page.attach_file('attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf")) 
-  click_button 'Save'
-end
+# When(/^I add a new book which already exists$/) do
+#   fill_in 'Name', :with => "Levine.pdf"
+#   page.attach_file('attachment',File.join(Rails.root, "/public/app/assets/Levine.pdf"))
+#   click_button 'Save'
+# end
 
 When(/^I add a book without attachment$/) do
   fill_in 'Name', :with => "Levine_test.pdf"

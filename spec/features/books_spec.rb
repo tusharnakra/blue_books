@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 feature "Books", :type => :feature do
-  
+  describe BooksController, type: :controller do
+  # include RSpec::Rails::ControllerExampleGroup
   def create_and_login
     # Create an object only once per description
     school_1 = School.create(name: "SEAS")
@@ -20,12 +21,36 @@ feature "Books", :type => :feature do
 #       expect {Group.destroy group}.to change(Group, :count).by(-1)
 #     end
 #   end
-  
-  describe "GET index" do
-    it "should get index" do
-      create_and_login
-      visit eval("books_path")
-      expect(page).to have_content 'Books'
-    end
+    
+  before :each do
+    create_and_login
+    # @file = fixture_file_upload('files/Levine.pdf', 'text/xml')
   end
+
+  # describe "POST /subscriber_imports" do
+#     let(:file) { { :file => fixture_file_upload('/files/Levine.pdf', 'text/pdf') } }
+#     subject { post :create, :subscriber_import => file }
+#   end
+
+  it "can upload a book" do
+    # visit eval("new_book_path")
+#     fill_in 'Name', :with => "Levine_test.pdf"
+    @file = fixture_file_upload('/files/Levine.pdf', 'text/xml')
+    # temp = File.open('somewhere')
+    # attach_file('attachment', @file)
+    # click_button 'Save'
+    post :create, :name => "Levine_test.pdf", :attachment => @file
+    response.should be_success
+  end
+  
+  
+  
+  # describe "GET index" do
+#     it "should get index" do
+#       create_and_login
+#       visit eval("books_path")
+#       expect(page).to have_content 'Books'
+#     end
+#   end
+end
 end
