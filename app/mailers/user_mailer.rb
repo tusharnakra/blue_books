@@ -2,12 +2,10 @@ class UserMailer < ActionMailer::Base
   def send_request(request_access)
 
     admin_id = Group.where(:name => "Admin").first[:id]
-    print admin_id
     emails = []
     Member.where(:group_id => admin_id).each do |table_entry|
       emails << table_entry[:email_address]
     end
-    print emails
 
     Mail.deliver do
       from    'fileshare597@gmail.com'
@@ -20,11 +18,12 @@ class UserMailer < ActionMailer::Base
   
   
   def send_doc_for_approval(send_document)
-    admin_id = Group.find(:all, :conditions => ["name LIKE ?", "Admin"]).first[:id]
+    admin_id = Group.where(:name => "Admin").first[:id]
     emails = []
-    Member.find(:all, :conditions => ["group_id LIKE ?", admin_id]).each do |table_entry|
+    Member.where(:group_id => admin_id).each do |table_entry|
       emails << table_entry[:email_address]
     end
+    
     Mail.deliver do
       from    'fileshare597@gmail.com'
       to      emails
