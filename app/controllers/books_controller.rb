@@ -32,7 +32,7 @@ class BooksController < ApplicationController
   end
 
   def book_search
-    @books = Book.where("name LIKE ? ", "%#{params[:book_search]}%")  
+    @books = Book.where("name iLIKE ? ", "%#{params[:book_search]}%")  
     render :template =>"books/index"
   end
   
