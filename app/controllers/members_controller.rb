@@ -116,8 +116,7 @@ class MembersController < ApplicationController
   def remove_member_from_group
     @member = Member.find(params[:id])
     @old_group = @member.group
-    new_group = Group.where(name: "Email Group 2")
-    if @member.update_attributes(:group_id => new_group[0].id)
+    if @member.update_attributes(:group_id => nil)
        redirect_to edit_members_in_group_path(@old_group) 
       else
         format.json { render json: @member.errors, status: :unprocessable_entity }
