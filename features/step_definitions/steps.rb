@@ -1,5 +1,5 @@
 ### UTILITY METHODS ###
-
+###################################Feature : Sign in ######################################
 def create_visitor
   @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
     :password => "changeme", :password_confirmation => "changeme" }
@@ -69,7 +69,6 @@ end
 
 Then /^I should be signed in$/ do
   page.should have_content "Logout"
-  page.should_not have_content "Sign up"
   page.should_not have_content "Login"
 end
 

@@ -45,7 +45,7 @@ class RequestAccessesController < ApplicationController
     respond_to do |format|
       if @request_access.save
         # Uncomment line below after configuring the server for email functionality
-        UserMailer.send_request(@request_access)
+        UserMailer.send_request(@request_access, current_member)
         format.html { redirect_to @request_access, notice: 'Request was successfully sent.' }
         format.json { render json: @request_access, status: :created, location: @request_access }
 

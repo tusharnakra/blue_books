@@ -19,7 +19,7 @@
         <td><%= member.last_name %></td>
         <td><%= member.pennkey %></td>
         <td><%= member.email_address %></td>
-        <td><%= member.school.name %></td>
+        <td><%= member.school.name unless member.school.nil? %></td>
       </tr>
     <% end %>
     <% end %>

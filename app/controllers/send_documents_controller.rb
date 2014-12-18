@@ -24,6 +24,8 @@ class SendDocumentsController < ApplicationController
   # GET /send_documents/new
   # GET /send_documents/new.json
   def new
+    @@book_path = params[:book_path]
+    @@book_name = params[:book_name]
     @send_document = SendDocument.new
     respond_to do |format|
       format.html # new.html.erb
@@ -42,7 +44,7 @@ class SendDocumentsController < ApplicationController
     @send_document = SendDocument.new(params[:send_document])
     respond_to do |format|
       if @send_document.save
-        UserMailer.send_doc_for_approval(@send_document)
+        UserMailer.send_doc_for_approval(@send_document, current_member, @@book_path, @@book_name)
         format.html { redirect_to @send_document, notice: 'Document was sent for approval.' }
         format.json { render json: @send_document, status: :created, location: @send_document }
       else

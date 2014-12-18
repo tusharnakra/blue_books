@@ -32,7 +32,7 @@ class BooksController < ApplicationController
   end
 
   def book_search
-    @books = Book.where("name iLIKE ? ", "%#{params[:book_search]}%")  
+    @books = Book.where("name LIKE ? ", "%#{params[:book_search]}%")  
     render :template =>"books/index"
   end
   
@@ -43,11 +43,12 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id]);
-    # p @book
+    book_path = "#{Rails.root}/public" + @book.attachment_url
+    book_name = @book.name
     if current_member.group.name.downcase.eql?"admin"
       render :template =>"books/update_post_approval"
     else
-      redirect_to new_send_document_path
+      redirect_to :controller => 'send_documents', :action => 'new', :book_path => book_path, :book_name => book_name
     end
   end
 

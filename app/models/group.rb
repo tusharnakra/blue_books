@@ -9,7 +9,7 @@
 #
 
 class Group < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :id
   #has_many :email_addresses
   has_many :members
   validates_uniqueness_of :name

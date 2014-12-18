@@ -84,7 +84,7 @@ class MembersController < ApplicationController
   end
 
   def search
-    @members = Member.where("first_name iLIKE ? AND last_name iLIKE ? AND pennkey iLIKE ? AND email_address iLIKE ?", "%#{params[:fnsearch]}%","%#{params[:lnsearch]}%", "%#{params[:pksearch]}%", "%#{params[:easearch]}%")  
+    @members = Member.where("first_name LIKE ? AND last_name LIKE ? AND pennkey LIKE ? AND email_address LIKE ?", "%#{params[:fnsearch]}%","%#{params[:lnsearch]}%", "%#{params[:pksearch]}%", "%#{params[:easearch]}%")  
     render :template =>"members/index"
   end
 
@@ -116,7 +116,8 @@ class MembersController < ApplicationController
   def remove_member_from_group
     @member = Member.find(params[:id])
     @old_group = @member.group
-    if @member.update_attributes(:group_id => nil)
+    new_group = Group.where(name: "Email Group 2")
+    if @member.update_attributes(:group_id => new_group[0].id)
        redirect_to edit_members_in_group_path(@old_group) 
       else
         format.json { render json: @member.errors, status: :unprocessable_entity }
