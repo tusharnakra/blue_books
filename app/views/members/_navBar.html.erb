@@ -16,10 +16,10 @@
             <ul class="nav">
               <li><%= link_to "Home",members_admin_home_page_path %></li>
               <li><%= link_to "Books", books_path %></li>
-              <li><%= link_to "Members", members_path if current_member.group.name.downcase.eql?"admin"%></li>
-              <li><%= link_to "Schools", schools_path if current_member.group.name.downcase.eql?"admin"%></li>
+              <li><%= link_to "Members", members_path if(current_member.group and current_member.group.name.downcase.eql?"admin")%></li>
+              <li><%= link_to "Schools", schools_path if(current_member.group and current_member.group.name.downcase.eql?"admin")%></li>
               
-              <li><%= link_to "Request Access", new_request_access_path unless current_member.group.name.downcase.eql?"admin"%></li>
+              <li><%= link_to "Request Access", new_request_access_path if(current_member.group.nil? or !current_member.group.name.downcase.eql?"admin")%></li>
               
             </ul>
           </div>
